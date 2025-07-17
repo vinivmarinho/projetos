@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* Mínimo 600px */
+@media screen and (min-width: 600px){
+    body{
+        background-color: #F3E5D8;
+    }
+    header{
+        /* Centralizando a imagem no header */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 274.49px; /* Altura igual a da imagem */
+        width: 580px; /* Largura igual a da imagem */
+        padding: 20px;
+        border-radius: 20px 20px 0px 0px; /* Bordas de cima arredondadas */
+        margin: auto; /* Centraliza o header na tela */
+        margin-top: 30px;
+        background-color: white; /* Altura igual a da imagem */
+    }   
+    header img{
+        margin: auto; /* Afasta a imagem do topo da tela */
+        width: 580px; /* Largura menor que o mínimo da tela (600px) para não ter rolagem lateral */
+        border-radius: 20px;
+    }
+    main{
+        padding: 20px;
+        width: 580px; /* Largura menor que o mínimo da tela (600px) para não ter rolagem lateral */
+    }
+}

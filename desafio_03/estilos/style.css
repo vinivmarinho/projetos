@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* Globais */
+/* Versão mobile first */
 :root{
     --fonte01: "Hanken Grotesk", sans-serif;
 }
@@ -18,7 +19,7 @@ body{
 }
 /* MAIN */
 main.container{
-    background-color: red;
+    background-color: white;
     width: 500px;
     height: 100vh;
 }
@@ -32,9 +33,9 @@ section.cabecalho{
     background-color: #6040FD;
     color: white;
     border-radius: 0px 0px 40px 40px;
-    height: 45%;
+    height: 50%;
 }
-section.cabecalho h1{ 
+section.cabecalho h1{
     color: #CAC2FF;
     font-size: 1.2em;
     margin-bottom: 10px; /* Afasta a div de pontos */
@@ -50,8 +51,7 @@ div.pontuacao{
     justify-content: center;
     /* Outras configurações */
     background-color: #4B25D0;
-    margin-bottom: 20px;
-    
+    margin-bottom: 10px;
 }
 div.pontuacao p.ponto{ /* "76" */
     font-size: 3.5em;
@@ -64,17 +64,21 @@ div.pontuacao p.ponto_total{ /* "of 100 */
 section.cabecalho div.feedback{ /* Mensagem de feedback */
     font-size: 1.5em;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 section.cabecalho p.mensagem{
     color: #A6A3FF;
     font-weight: 700;
 }
 
+
 /* Seção pontos */
+section.pontos{
+    height: auto;
+}
 section.pontos h2{
     color: #323851;
-    margin: 20px;
+    margin-top: 10px;
 }
 div.atributo{ /* Para todas as divs */
     margin: 15px;
@@ -123,3 +127,14 @@ div#visual div.propriedade{ /* "Visual" */
 span.total{ /* Configuração de "/ 100" */
     color: #ADA6B1;
 }
+/* Botão de "Continue" */
+div.botao{
+    background-color: #303B59;
+    color: white;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    border-radius: 30px;
+}
+/* Decidir a height do mobile first */

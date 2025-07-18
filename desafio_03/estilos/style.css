@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* Globais */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #ECF2FF;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+/* MAIN */
+main.container{
+    background-color: white;
+    width: 500px;
+}
+/* Seção cabeçalho */
+section.cabecalho{
+    /* Flexbox */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: #6040FD;
+    color: white;
+}
+div.pontuacao{
+    background-color: #4B25D0;
+    /* Deixando a div em formato de círculo */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Flexbox */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+div.pontuacao p.ponto{
+    font-size: 4em;
+    font-weight: 700;
+}
+div.pontuacao p.ponto_total{
+    font-size: 1.2em;
+    color: #867AFF;
+}

@@ -13,13 +13,14 @@ body{
     display: flex;
     justify-content: center;
     background-color: #ECF2FF;
-    font-family: var(--fonte01)
+    font-family: var(--fonte01);
     
 }
 /* MAIN */
 main.container{
-    background-color: white;
+    background-color: red;
     width: 500px;
+    height: 100vh;
 }
 /* Seção cabeçalho */
 section.cabecalho{
@@ -31,12 +32,12 @@ section.cabecalho{
     background-color: #6040FD;
     color: white;
     border-radius: 0px 0px 40px 40px;
-    padding: 30px;
+    height: 45%;
 }
 section.cabecalho h1{ 
     color: #CAC2FF;
     font-size: 1.2em;
-    margin-bottom: 20px; /* Afasta a div de pontos */
+    margin-bottom: 10px; /* Afasta a div de pontos */
 }
 div.pontuacao{
     width: 130px; /* Largura e altura iguais */
@@ -118,4 +119,7 @@ div#visual img{ /* Imagem de "visual" */
 }
 div#visual div.propriedade{ /* "Visual" */
     color: #4550CF;
+}
+span.total{ /* Configuração de "/ 100" */
+    color: #ADA6B1;
 }

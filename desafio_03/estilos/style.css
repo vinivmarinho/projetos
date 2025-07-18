@@ -81,10 +81,13 @@ div.atributo{ /* Para todas as divs */
     /* Flexbox */
     display: flex;
     justify-content: space-between;
+    font-weight: 800; /* Peso para todas as fontes da div */
 }
 div#reacao{
     background-color: #FFF6F7;
-    
+}
+div#reacao img{ /* Imagem de "reação" */
+    margin-right: 10px;
 }
 div#reacao div.propriedade{ /* "Reação" */
     color: #fc7177;
@@ -92,17 +95,26 @@ div#reacao div.propriedade{ /* "Reação" */
 div#memoria{
     background-color: #FFFAF4;
 }
+div#memoria img{ /* Imagem de "memória" */
+    margin-right: 10px;
+}
 div#memoria div.propriedade{ /* "Memória */
     color: #EBC05C;
 }
 div#verbal{
     background-color: #F2FDF9;
 }
+div#verbal img{ /* Imagem de "verbal" */
+    margin-right: 10px;
+}
 div#verbal div.propriedade{ /* "Verbal" */
     color: #41A98D;
 }
 div#visual{
     background-color: #F4F4FE;
+}
+div#visual img{ /* Imagem de "visual" */
+    margin-right: 10px;
 }
 div#visual div.propriedade{ /* "Visual" */
     color: #4550CF;

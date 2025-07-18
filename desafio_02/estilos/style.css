@@ -106,3 +106,10 @@ div.rede_social:hover{
     cursor: pointer;
 }
 
+/* Media Query */
+@media screen and (min-width: 1000px) {
+    main.container{
+        width: 400px;
+    }
+}
+

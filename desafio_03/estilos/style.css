@@ -75,3 +75,35 @@ section.pontos h2{
     color: #323851;
     margin: 20px;
 }
+div.atributo{ /* Para todas as divs */
+    margin: 15px;
+    padding: 10px;
+    /* Flexbox */
+    display: flex;
+    justify-content: space-between;
+}
+div#reacao{
+    background-color: #FFF6F7;
+    
+}
+div#reacao div.propriedade{ /* "Reação" */
+    color: #fc7177;
+}
+div#memoria{
+    background-color: #FFFAF4;
+}
+div#memoria div.propriedade{ /* "Memória */
+    color: #EBC05C;
+}
+div#verbal{
+    background-color: #F2FDF9;
+}
+div#verbal div.propriedade{ /* "Verbal" */
+    color: #41A98D;
+}
+div#visual{
+    background-color: #F4F4FE;
+}
+div#visual div.propriedade{ /* "Visual" */
+    color: #4550CF;
+}

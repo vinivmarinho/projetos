@@ -1,15 +1,19 @@
 @charset "UTF-8";
 /* Globais */
+:root{
+    --fonte01: "Hanken Grotesk", sans-serif;
+}
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-size: 18px;
 }
 body{
     display: flex;
     justify-content: center;
     background-color: #ECF2FF;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--fonte01)
     
 }
 /* MAIN */
@@ -35,10 +39,9 @@ section.cabecalho h1{
     margin-bottom: 20px; /* Afasta a div de pontos */
 }
 div.pontuacao{
-    /* Deixando a div em formato de círculo */
-    width: 130px;
+    width: 130px; /* Largura e altura iguais */
     height: 130px;
-    border-radius: 50%;
+    border-radius: 50%; /* Deixando a div em formato de círculo */
     /* Flexbox */
     display: flex;
     flex-flow: column nowrap;
@@ -47,12 +50,28 @@ div.pontuacao{
     /* Outras configurações */
     background-color: #4B25D0;
     margin-bottom: 20px;
+    
 }
 div.pontuacao p.ponto{ /* "76" */
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 700;
 }
 div.pontuacao p.ponto_total{ /* "of 100 */
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #867AFF;
+}
+section.cabecalho div.feedback{ /* Mensagem de feedback */
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+section.cabecalho p.mensagem{
+    color: #A6A3FF;
+    font-weight: 700;
+}
+
+/* Seção pontos */
+section.pontos h2{
+    color: #323851;
+    margin: 20px;
 }

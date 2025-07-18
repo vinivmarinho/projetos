@@ -23,26 +23,36 @@ section.cabecalho{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    /* Outras configurações */
     background-color: #6040FD;
     color: white;
+    border-radius: 0px 0px 40px 40px;
+    padding: 30px;
+}
+section.cabecalho h1{ 
+    color: #CAC2FF;
+    font-size: 1.2em;
+    margin-bottom: 20px; /* Afasta a div de pontos */
 }
 div.pontuacao{
-    background-color: #4B25D0;
     /* Deixando a div em formato de círculo */
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     /* Flexbox */
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    /* Outras configurações */
+    background-color: #4B25D0;
+    margin-bottom: 20px;
 }
-div.pontuacao p.ponto{
+div.pontuacao p.ponto{ /* "76" */
     font-size: 4em;
     font-weight: 700;
 }
-div.pontuacao p.ponto_total{
+div.pontuacao p.ponto_total{ /* "of 100 */
     font-size: 1.2em;
     color: #867AFF;
 }

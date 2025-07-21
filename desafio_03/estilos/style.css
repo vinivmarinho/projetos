@@ -167,7 +167,7 @@ div.botao:hover{
     }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 550px) /* Tablets e celulares em paisagem */ {
     body {
         background-color: #ECF2FF;
         height: 100vh;
@@ -237,3 +237,31 @@ div.botao:hover{
         border-radius: 30px;
     }
 }
+@media screen and (min-width: 1200px) /* Desktops */ {
+    main.container { /* Transformando o main em flexbox */
+        width: 700px;
+    }
+    /* Seção de cabeçalho */
+    
+    section.cabecalho h1{ /* "Your result" */
+    font-size: 1.3em; /* Afasta a div de pontos */
+    margin-top: 30px;
+    }
+    div.pontuacao{
+        margin-top: 30px;
+        width: 200px; /* Largura e altura iguais */
+        height: 200px;
+    }
+    div.pontuacao p.ponto{ /* "76" */
+    font-size: 3.8em;
+    }
+    section.cabecalho div.feedback{ /* Mensagem de feedback ("Great")*/
+        font-size: 1.5em;
+        margin-top: 30px;
+    }
+    section.cabecalho p.mensagem{
+        font-size: 1.1em;
+        margin-top: 10px;
+    }
+}
+/* Terminar o restante das configurações dessa media query */

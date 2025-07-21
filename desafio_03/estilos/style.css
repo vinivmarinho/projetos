@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* Globais */
-/* Versão mobile first (Versão para 500px de altura*/
+/* Versão mobile first (Versão para 500px de altura e 320 de largura*/
 :root{
     --fonte01: "Hanken Grotesk", sans-serif;
 }
@@ -59,7 +59,7 @@ div.pontuacao p.ponto_total{ /* "of 100 */
     color: #867AFF;
 }
 section.cabecalho div.feedback{ /* Mensagem de feedback */
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 700;
 }
 section.cabecalho p.mensagem{
@@ -70,7 +70,7 @@ section.cabecalho p.mensagem{
 
 /* Seção pontos */
 section.pontos{
-    height: 280px;
+    height: 60%; /* 60% Para somar 100% com o restante da seção de cabeçalho */
 }
 section.pontos h2{
     color: #323851;
@@ -130,7 +130,8 @@ div.botao{
     padding: 20px;
     width: 70%;
     margin: auto;
+    margin-top: 10px;
     text-align: center;
     border-radius: 30px;
 }
-/* Decidir a height do mobile first */
+/* Fazer as media_queries */

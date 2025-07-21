@@ -162,3 +162,9 @@ div.botao{
     margin-top: 20px;
     }
 }
+
+@media screen and (min-width: 600px) and (min-height: 300px) {
+    div.botao{
+        background-color: red;
+    }
+}

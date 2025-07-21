@@ -142,3 +142,23 @@ div.botao{
     border-radius: 30px;
 }
 /* Fazer as media_queries */
+@media screen and (min-width: 414px) {
+    section.cabecalho div.feedback{ /* Mensagem de feedback ("Great")*/
+        font-size: 2em; /* Aumentei o tamanho */
+        font-weight: 700;
+        margin-top: 15px;
+    }
+    section.cabecalho p.mensagem{
+        font-size: 1.3em;
+        margin-top: 10px;
+    }
+    section.pontos h2{
+        color: #323851;
+        margin: 5px;
+        margin-left: 20px;
+        font-size: 1.3em;
+    }
+    div.atributo{ /* Para todas as divs */
+    margin-top: 20px;
+    }
+}

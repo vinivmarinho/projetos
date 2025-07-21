@@ -141,6 +141,10 @@ div.botao{
     text-align: center;
     border-radius: 30px;
 }
+div.botao:hover{
+    background-color: #4836F2;
+    cursor: pointer;
+}
 /* Fazer as media_queries */
 @media screen and (min-width: 400px) {
     section.cabecalho div.feedback{ /* Mensagem de feedback ("Great")*/
@@ -182,6 +186,7 @@ div.botao{
         border-radius: 30px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+    /* Seção de cabeçalho */
     section.cabecalho, section.pontos {
         width: 50%;
         height: 100%;
@@ -189,16 +194,20 @@ div.botao{
     section.cabecalho{
         border-radius: 30px;
     }
+    section.cabecalho h1{ /* "Your result" */
+    color: #CAC2FF;
+    font-size: 1em; /* Afasta a div de pontos */
+    margin-top: 10px;
+    }
     div.pontuacao{
-    width: 200px; /* Largura e altura iguais */
-    height: 200px;
-   
-}
+    width: 140px; /* Largura e altura iguais */
+    height: 140px;
+    }
     div.pontuacao p.ponto{ /* "76" */
     font-size: 3.5em;
     }
     section.cabecalho div.feedback{ /* Mensagem de feedback ("Great")*/
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin-top: 10px;
     }
     section.cabecalho p.mensagem{
@@ -206,5 +215,25 @@ div.botao{
         font-size: 0.8em;
         margin-top: 5px;
         font-weight: 500;
+    }
+
+    /* Seção pontos */
+    section.pontos h2{ /* "Summary" */
+    margin: 5px;
+    margin-left: 15px;
+    font-size: 1em;
+    }
+    div.atributo{ /* Para todas as divs */
+    margin: 10px;
+    padding: 5px; /* Diminuí o padding */
+    }
+    /* Botão de "Continue" */
+    div.botao{
+        padding: 10px;
+        width: 80%;
+        margin: auto;
+        margin-top: 10px;
+        text-align: center;
+        border-radius: 30px;
     }
 }

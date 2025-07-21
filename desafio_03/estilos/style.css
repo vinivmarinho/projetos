@@ -142,7 +142,7 @@ div.botao{
     border-radius: 30px;
 }
 /* Fazer as media_queries */
-@media screen and (min-width: 414px) {
+@media screen and (min-width: 400px) {
     section.cabecalho div.feedback{ /* Mensagem de feedback ("Great")*/
         font-size: 2em; /* Aumentei o tamanho */
         font-weight: 700;

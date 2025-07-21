@@ -32,7 +32,7 @@ section.cabecalho{
     background-color: #6040FD;
     color: white;
     border-radius: 0px 0px 40px 40px;
-    height: 50%;
+    height: 40%;
 }
 section.cabecalho h1{ /* "Your result" */
     color: #CAC2FF;
@@ -75,7 +75,7 @@ section.cabecalho p.mensagem{
 
 /* Seção pontos */
 section.pontos{
-    height: 50%; /* 60% Para somar 100% com o restante da seção de cabeçalho */
+    height: 6%; /* 60% Para somar 100% com o restante da seção de cabeçalho */
 }
 section.pontos h2{
     color: #323851;

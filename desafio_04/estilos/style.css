@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 body{
-    
+    font-family: var(--fonte_padrao);
 }
 /* MAIN */
 main{
@@ -23,17 +23,48 @@ header{
     color: #511D50;
     grid-column: 1 / -1; /* Ocupa todas as colunas */
     margin-top: 30px;
+    justify-items: center; /* Alinha os itens horizontalmente no centro do meu header */
 }
 header h1{
-    font-family: var(--fonte_padrao);
-    font-size: 2.5em;
-    text-align: center;
+    width: 50vw; /* Limito a largura do texto em 50% da tela */
+    font-size: 2.6em;
+    
+    text-align: center; /* Alinho o texto ao centro */
 }
 p.info{
-    align-self: flex-end;
+    color: #B2A4B1;
+    font-weight: 500;
     grid-row: 2 / 3; /* começa na linha 2 e termina na 3 */
     grid-column: 1 / -1; /* Ocupa todas as colunas */
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: justify;
+    margin: 10px 30px 30px 30px;
+    text-align: center;
 }
+
+/* Classificações em rankings */
+div.classificacao_01{ /* Vai ser uma flexbox */
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    flex-flow: row wrap;
+    background-color: #F7F2F8;
+    color: #511F50;
+    font-weight: 700;
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+    margin: 10px;
+    padding: 20px;
+}
+div.classificacao_01 img{
+    grid-row: 1 / 2;
+}
+div.classificacao_01 p{
+    display: block;
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+}
+
+/* Ajustar as classificações */
+/* Deixar as estrelas em cima e o "título" embaixo */
+/* Decidir qual é o melhor a se usar nesse caso: grid ou flexbox */
+
+

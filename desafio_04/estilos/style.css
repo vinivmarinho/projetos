@@ -40,42 +40,29 @@ p.info{
     text-align: center;
 }
 
-/* Classificações em rankings */
-/* Primeiro ranking: */
-div.classificacao_01{ /* Vai ser um grid */
+/* Rankings */
+div.classificacao{
     /* Posição da div no elemento pai */
-    grid-column: 1 / -1;
-    margin: 10px;
+    grid-column: 1 / -1; /* Ocupa todo o elemento pai */
+    margin: 10px 30px 0px 30px; /* 10 em cima, 0 embaixo e 30 dos lados */
     padding: 10px;
-    /* Configurações de grid no container */
-    display: grid;
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: repeat(3, auto);
     /* Outras configurações */
     background-color: #F7F2F8;
     color: #511F50;
     font-weight: 700;
+    border-radius: 10px;
+    text-align: center; /* O texto e imagens sempre ficam alinhados no centro */
     
 }
-div.classificacao_01 section.fotos{ /* Container que guarda as imagens */
-    grid-column: 1 / -1; /* Ocupa todo o espaço do elemento pai */
-    text-align: center; /* O texto sempre fica alinhado no centro */
-}
-div.classificacao_01 section.fotos img{ /* Imagens dentro da seção.fotos */
+
+div.classificacao section.fotos img{ /* Imagens dentro da seção.fotos */
     padding: 3px; /* Separa uma imagem da outra */
 }
-div.classificacao_01 p{ /* "Rated 5 starts in reviews" */
-    grid-row: 2 / 3; /* Linhas de começo e término do elemento pai */
-    grid-column: 1 / -1; /* Ocupa todo o espaço do elemento pai */
-    text-align: center; /* O texto sempre fica alinhado no centro */
+div.classificacao p{ /* "Rated 5 starts in reviews" */
     margin-top: 10px; /* Separa a seção.fotos */
+    font-size: 1.2em;
 }
 
-/* Segundo ranking: */
-div.classificacao_02{
-    background-color: #F7F2F8;
-    grid-column: 1 / -1;
-}
 
 /* Ajustar as classificações */
 /* Deixar as estrelas em cima e o "título" embaixo */

@@ -17,6 +17,7 @@ main{
     display: grid;
     grid-template-rows: auto repeat(7, auto); /* 8 linhas com tamanho automático */
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto; /* Para cada linha "nova" gerada, usa a altura baseada no conteúdo que ela tivrer */
 }
 /* HEADER */
 header{
@@ -58,14 +59,25 @@ div.classificacao{
 div.classificacao section.fotos img{ /* Imagens dentro da seção.fotos */
     padding: 3px; /* Separa uma imagem da outra */
 }
-div.classificacao p{ /* "Rated 5 starts in reviews" */
+div.classificacao p{ /* "parágrafos dentro das div.classificacao" */
     margin-top: 10px; /* Separa a seção.fotos */
     font-size: 1.2em;
 }
+/* Avaliações */
 
-
-/* Ajustar as classificações */
-/* Deixar as estrelas em cima e o "título" embaixo */
-/* Decidir qual é o melhor a se usar nesse caso: grid ou flexbox */
+div.avaliacao{
+    /* Posicionamento */
+    grid-column: 1 / -1; /* Ocupa todas as colunas do elemento (grid) pai */
+    /* Tamanho */
+    margin: 15px 30px 5px 30px; /* 15 em cima, 5 embaixo e 30 dos lados */
+    padding: 30px;
+    /* Outras configurações */
+    background-color: #511F50;
+}
+/* Próximas atividades */
+/* 
+- Adicionar as imagens nos comentários
+- Posicionar os itens dentro
+- Estilizar
 
 

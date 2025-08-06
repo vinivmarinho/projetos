@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* Globais */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: #141519;
+    justify-content: center;
+    align-items: center;    
+}
+main {
+    background-color: #222933;
+    width: 90vw;
+    height: 50vh;
+}

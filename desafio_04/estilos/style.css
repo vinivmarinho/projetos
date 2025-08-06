@@ -68,16 +68,27 @@ div.classificacao p{ /* "parágrafos dentro das div.classificacao" */
 div.avaliacao{
     /* Posicionamento */
     grid-column: 1 / -1; /* Ocupa todas as colunas do elemento (grid) pai */
+
+    /* Transformando o container em um grid */
+    display: grid;
+    grid-template-rows:  repeat(2, auto);
+    grid-template-columns: 50px, auto;
+
     /* Tamanho */
     margin: 15px 30px 5px 30px; /* 15 em cima, 5 embaixo e 30 dos lados */
     padding: 30px;
     /* Outras configurações */
     background-color: #511F50;
+    color: white;
 }
+div.avaliacao img{ /* Imagens dentro da(s) div.avaliação */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+
 /* Próximas atividades */
 /* 
-- Adicionar as imagens nos comentários
-- Posicionar os itens dentro
-- Estilizar
+- Posicionar os itens dentro (usando o grid)
 
 
+*/

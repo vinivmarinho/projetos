@@ -1,6 +1,33 @@
 @charset "UTF-8";
+/* Configurações globais */
+:root{
+    --fonte_padrao: "Poppins", sans-serif;
+}
 *{
     margin: 0px;
     padding: 0px;
-    
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../assets/images/bg-intro-mobile.png);
+    background-color: #FF7978;
+    font-family: var(--fonte_padrao);
+    width: 100vw;
+    height: 100vh;
+}
+div#container{ /* Vai centralizar todo o conteúdo na tela */
+    margin: auto;
+    width: 80vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center; /* Alinha horizontalmente */
+}
+
+header{
+    margin-top: 50px;
+    color: white;
+    text-align: justify;
+    font-size: 1.4em;
+    font-weight: 700;
+    width: 190px; /* Faz com que o texto quebre em 2 linhas */
 }

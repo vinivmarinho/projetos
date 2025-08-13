@@ -2,3 +2,8 @@ Alguns requisitos para o meu projeto
 - Versão Mobile first (400px width)
 - Campo de formulário
 - Mensagem de erro caso o usuário não preencha os campos
+
+
+
+Sugestões:
+- Ver como outras pessoas quebraram a linha do header

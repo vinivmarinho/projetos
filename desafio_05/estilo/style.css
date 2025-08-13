@@ -51,4 +51,29 @@ div#botao_teste p{
 }
 div#container_formulario{
     margin-top: 20px;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px; /* Espaço entre cada item dentro desse container */
+    padding: 15px;
+}
+div#container_formulario input{
+    padding: 10px;
+}
+div#container_formulario button#id_teste_gratis{
+    padding: 15px;
+    color: white;
+    background-color: #36CD8A;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.290);
+}
+div#container_formulario p{
+    color: #C1BFCC;
+    text-align: center;
+    font-size: 0.8em;
+    & span{
+        color: #EC8586;
+    }
 }

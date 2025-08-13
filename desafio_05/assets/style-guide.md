@@ -13,24 +13,27 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Orange 500: hsl(25, 97%, 53%)
+- Red 400: hsl(0, 100%, 74%) 
+- Green 400: hsl(154, 59%, 51%)
+
+### Accent
+
+- Purple 700: hsl(248, 32%, 49%)
 
 ### Neutral
 
-- White: hsl(0, 100%, 100%)
-- Grey 500: hsl(217, 12%, 63%)
-- Grey 900: hsl(213, 19%, 18%)
-- Grey 950: hsl(216, 12%, 8%)
+- Gray 900: hsl(249, 10%, 26%) 
+- Purple 350: hsl(246, 25%, 77%)
 
 ## Typography
 
 ### Body Copy
 
-- Font size (paragraph): 15px
+- Font size: 16px
 
 ### Font
 
-- Family: [Overpass](https://fonts.google.com/specimen/Overpass)
-- Weights: 400, 700
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400, 500, 600, 700
 
 > 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma.

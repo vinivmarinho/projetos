@@ -36,3 +36,12 @@ p#descricao{
     color: white;
     text-align: center;
 }
+div#botao_teste{
+    background-color: #5D54A3;
+    color: white;
+    text-align: center;
+}
+div#botao_teste p{
+   width: 55%; /* Espreme o elemento fazendo com que a quebra de texto aconteça */
+   margin: auto; /* Centraliza em relação ao elemento pai ("div#botao_teste") */
+}

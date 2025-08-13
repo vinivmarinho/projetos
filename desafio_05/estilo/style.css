@@ -40,8 +40,15 @@ div#botao_teste{
     background-color: #5D54A3;
     color: white;
     text-align: center;
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.290);
+    padding: 10px 2px 10px 2px; /* 10px em cima e embaixo */
 }
 div#botao_teste p{
    width: 55%; /* Espreme o elemento fazendo com que a quebra de texto aconteça */
    margin: auto; /* Centraliza em relação ao elemento pai ("div#botao_teste") */
+}
+div#container_formulario{
+    margin-top: 20px;
 }

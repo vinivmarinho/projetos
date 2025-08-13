@@ -24,10 +24,15 @@ div#container{ /* Vai centralizar todo o conteúdo na tela */
 }
 
 header{
-    margin-top: 50px;
+    margin-top: 40px;
     color: white;
     text-align: justify;
-    font-size: 1.4em;
+    font-size: 1.5em;
     font-weight: 700;
-    width: 190px; /* Faz com que o texto quebre em 2 linhas */
+    width: 202px; /* Faz com que o texto quebre em 2 linhas (e fique alinhado) */
+}
+p#descricao{
+    margin-top: 10px; /* Afasta o elemento do header */
+    color: white;
+    text-align: center;
 }

@@ -7,3 +7,15 @@ Alguns requisitos para o meu projeto
 
 Sugestões:
 - Ver como outras pessoas quebraram a linha do header
+- Ver como fizeram a validação dos campos
+- Ver como colocaram o aviso de erro embaixo do campo de input
+
+
+Pseudocódigo:
+- Criar uma função que verifica se os campos estão preenchidos
+- Se o campo não estiver preenchido, colocar o ícone de alerta
+- Se determinado campo estiver vazio, aquele campo irá ficar vermelho
+
+Então eu preciso:
+Criar uma classe para a variável nome (que referencia um elemento input)
+Através da classe vou estilizar para que o placeholder dentro do elemento fique vermelho

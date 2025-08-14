@@ -77,3 +77,10 @@ div#container_formulario p{
         color: #EC8586;
     }
 }
+.placeholder_vermelho::placeholder { /* Muda o placeholder */
+    display: flex;
+    color: #D18E8D;
+}
+.placeholder_vermelho { /* Muda o elemento inteiro */
+    border: 2px solid #D18E8D;
+}

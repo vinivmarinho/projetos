@@ -11,11 +11,10 @@ Sugestões:
 - Ver como colocaram o aviso de erro embaixo do campo de input
 
 
-Pseudocódigo:
-- Criar uma função que verifica se os campos estão preenchidos
-- Se o campo não estiver preenchido, colocar o ícone de alerta
-- Se determinado campo estiver vazio, aquele campo irá ficar vermelho
+My steps:
+- Criar uma função que verifica se os campos estão preenchidos (OK)
+- Se o campo não estiver preenchido, colocar o ícone de alerta (Não consegui)
+- Se determinado campo estiver vazio, aquele campo irá ficar vermelho (OK)
+- Validar cada campo (max e min de caracteres. Se realmente é um email.)
+- Fazer a versão para desktop
 
-Então eu preciso:
-Criar uma classe para a variável nome (que referencia um elemento input)
-Através da classe vou estilizar para que o placeholder dentro do elemento fique vermelho

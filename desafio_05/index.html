@@ -20,10 +20,10 @@
     </div>
 
     <div id="container_formulario">
-      <input type="text" id="id_nome" placeholder="First Name"></input>
-      <input type="text" id="id_sobrenome" placeholder="Last Name"></input>
-      <input type="email" id="id_email" placeholder="Email Adress"></input>
-      <input type="password" id="id_senha" placeholder="Password">
+      <input type="text" id="id_nome" placeholder="First Name" minlength="3" autocomplete="given-name" required>
+      <input type="text" id="id_sobrenome" placeholder="Last Name" minlength="3" autocomplete="family-name" required>
+      <input type="email" id="id_email" placeholder="Email Address" autocomplete="email" required>
+      <input type="password" id="id_senha" placeholder="Password" minlength="8" autocomplete="current-password" required>
       <button type="submit" id="id_teste_gratis">Claim Your Free Trial</button>
       <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
     </div>

@@ -15,6 +15,6 @@ My steps:
 - Criar uma função que verifica se os campos estão preenchidos (OK)
 - Se o campo não estiver preenchido, colocar o ícone de alerta (Não consegui)
 - Se determinado campo estiver vazio, aquele campo irá ficar vermelho (OK)
-- Validar cada campo (max e min de caracteres. Se realmente é um email.)
+- Validar cada campo (max e min de caracteres. Se realmente é um email.) (OK)
 - Fazer a versão para desktop
 

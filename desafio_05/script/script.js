@@ -26,13 +26,14 @@ function validacao(input) {
         input.classList.remove("placeholder_vermelho")
     }
 }
-// Chama a função "validacao" pra cada input
+// Chama as funções "validacao" e "valida_tamanho" pra cada input
 function valida_campos() {
     validacao(nome)
     valida_tamanho("id_nome", 3)
     validacao(sobrenome)
     valida_tamanho("id_sobrenome", 4)
     validacao(email)
+    valida_tamanho("id_email", 6)
     validacao(senha)
     valida_tamanho("id_senha", 8)
 }

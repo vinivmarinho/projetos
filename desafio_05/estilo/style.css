@@ -46,23 +46,26 @@ div#botao_teste{
     cursor: pointer;
     border-radius: 7px;
     box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.290);
-    padding: 8px 2px 8px 2px; /* 10px em cima e embaixo */
+    padding: 8px 2px 8px 2px; /* 8px em cima e embaixo */
 }
 div#botao_teste p{
    width: 55%; /* Espreme o elemento fazendo com que a quebra de texto aconteça */
    margin: auto; /* Centraliza em relação ao elemento pai ("div#botao_teste") */
 }
 div#container_formulario{
+    border-radius: 20px;
     margin-top: 20px;
     background-color: white;
     display: flex;
     flex-flow: column nowrap;
     gap: 15px; /* Espaço entre cada item dentro desse container */
-    padding: 15px;
+    padding: 30px;
 }
 div#container_formulario input{
-    padding: 10px;
+    padding: 15px;
     width: 100%;
+    border-radius: 10px;
+    border: 1px solid purple;
 }
 div#container_formulario button#id_teste_gratis{
     padding: 15px;
@@ -95,16 +98,32 @@ div#container_formulario p{
     div#container{
         flex-flow: row nowrap;
         justify-content: space-evenly; /* Alinha horizontalmente */
-        align-items: flex-end; /* Alinha verticalmente */
+        align-items: center; /* Alinha verticalmente */
+    }
+    div#left{
     }
     header{
         font-size: 2.2em;
-        text-align: justify;
         width: 300px; /* Faz com que o texto quebre em 2 linhas (e fique alinhado) */
         font-weight: 800;
+        line-height: 1.2em;
     }
     p#descricao{
-        text-align: center;
         width: 450px; /* Limita o espaço do elemento */
-}
+    }
+    div#right{
+        margin-top: 60px;
+        height: 500px;
+    }
+    div#botao_teste{
+        text-align: center;
+        cursor: pointer;
+        border-radius: 7px;
+        box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.290);
+        padding: 13px 2px 13px 2px; /* 13px em cima e embaixo */
+    }
+    div#botao_teste p{
+        width: 100%; /* Preenche todo o elemento pai */
+    }
+
 }

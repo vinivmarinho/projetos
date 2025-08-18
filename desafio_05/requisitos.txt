@@ -16,5 +16,7 @@ My steps:
 - Se o campo não estiver preenchido, colocar o ícone de alerta (Não consegui)
 - Se determinado campo estiver vazio, aquele campo irá ficar vermelho (OK)
 - Validar cada campo (max e min de caracteres. Se realmente é um email.) (OK)
-- Fazer a versão para desktop
+- Fazer a versão para desktop(OK)
+-Rever a lógica dos campos vazios:
+-Se os campos estiverem preenchidos, avaliar o mínimo de caracteres, se não, o alerta não irá disparar(Próxima tarefa)
 

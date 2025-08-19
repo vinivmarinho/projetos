@@ -65,7 +65,9 @@ div#container_formulario input{
     padding: 15px;
     width: 100%;
     border-radius: 10px;
-    border: 1px solid purple;
+}
+div#container_formulario input.input{ /* Eles recebem essa classe pra que eu consiga remover ela no javascript se o campo estiver vazio. Quando removida, eles irão receber outra classse com outras configurações */
+    border: 2px solid black;
 }
 div#container_formulario button#id_teste_gratis{
     padding: 15px;

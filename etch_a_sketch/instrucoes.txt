@@ -23,4 +23,7 @@ My steps:
 
 
 Problems:
-- Adicionar um botão que faz aparecer um prompt pro usuário enviar quantos quadrados por linha ele quer (máximo de quadrados: 100)
+- Adicionar um botão que faz aparecer um prompt pro usuário enviar quantos quadrados por linha ele quer (máximo de quadrados: 100) (OK)
+- Calcular o tamanho de cada quadrado com base no input do usuário
+- O width ficou em porcentagem
+- O Height ficou em formato de pix, parei por aqui

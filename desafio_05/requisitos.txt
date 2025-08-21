@@ -20,4 +20,5 @@ My steps:
 -Rever a lógica dos campos vazios:
 -Se os campos estiverem preenchidos, avaliar o mínimo de caracteres, se não, o alerta não irá disparar(OK)
 - Se o campo estiver vazio, a borda irá mudar de cor(OK)
+- Fazer uma página HTML pra quando a pessoa clicar
 

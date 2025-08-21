@@ -95,14 +95,10 @@ div#container_formulario p{
 }
 
 @media screen and (min-width: 1000px) {
-    body{
-    }
     div#container{
         flex-flow: row nowrap;
         justify-content: space-evenly; /* Alinha horizontalmente */
         align-items: center; /* Alinha verticalmente */
-    }
-    div#left{
     }
     header{
         font-size: 2.2em;

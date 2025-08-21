@@ -1,0 +1,24 @@
+* Criar uma página com uma grade 16x16 de quadrados (divs).
+
+* Os quadrados precisam ser gerados pelo JavaScript, não escritos manualmente no HTML.
+
+* Usar Flexbox para organizar os quadrados como uma grade.
+
+* Criar um efeito hover: quando passar o mouse em cima de um quadrado, ele muda de cor.
+
+* Criar um botão que pergunta ao usuário quantos quadrados por lado a grade deve ter (até 100).
+
+* Depois, a grade deve ser recriada no mesmo espaço total (ex: 960px de largura).
+
+* Colocar os quadrados da grade dentro de uma div "container". Essa div pode ser escrita no arquivo HTML
+
+* Cuidado com as bordas e margens, pois elas podem alterar o tamanho dos quadrados!
+
+
+My steps:
+- Criar um loop em JS para fazer os 256 quadrados
+- Width da tela: 1366 / 16 = cada quadrado deve ter 85,375 de width
+- height da tela: 599 / 16 = Cada quadrado deve ter 37,4375 de height
+
+Problems:
+- Consegui criar 1 quadrado, mas não consegui fazer o loop funcionar

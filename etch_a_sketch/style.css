@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* Globais */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div#container{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(97, 50, 50);
+}
+.quadrado{
+    background-color: red;
+    width: 85px;
+    height: 37px;
+}

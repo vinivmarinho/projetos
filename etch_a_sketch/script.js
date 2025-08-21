@@ -1,4 +1,27 @@
 const container = document.querySelector("div#container")
+let botao = document.querySelector("button")
+botao.addEventListener("click", () =>{
+    container.innerHTML = ""
+    let numero = prompt("Quantos quadrados você gostaria?")
+    if (numero > 100) {
+        alert("Número não pode exceder 100")
+    } else {
+        for (let inicio = 1; inicio <= numero*numero; inicio++) {
+            let quadrado = document.createElement("div")
+            quadrado.classList.add("quadrado")
+            container.appendChild(quadrado)
+
+            quadrado.addEventListener("mouseenter", () => {
+                quadrado.classList.add("quadrado_ativo")
+            })
+            quadrado.addEventListener("mouseleave", () => {
+                quadrado.classList.remove("quadrado_ativo")
+            })
+        }
+    }
+})
+
+
 for (let inicio = 1; inicio <= 256; inicio++) {
     let quadrado = document.createElement("div")
     quadrado.classList.add("quadrado")

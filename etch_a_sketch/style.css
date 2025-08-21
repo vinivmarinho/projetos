@@ -5,20 +5,22 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+button{
+    text-align: center;
+}
 div#container{
     display: flex;
     flex-flow: row wrap;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(97, 50, 50);
 }
 div.quadrado{
     background-color: blue;
     border: 1px solid black;
-    height: 37px;
+    height: 36.25px; /* 599px(altura total da tela - 19px do botão) resulta em 36.25px pra cada quadrado 
     /* Flex => flex-grow flex-shrink - flex basis */
-    flex: 1 1 6.25%; /* 100% (width da tela) dividido por 16 (quadrados por linha) dá 6,25% (Cada quadrado tem esse tamanho pra que sempre tenha um número fixo de quadrados na tela) */
+    flex: 1 1 6.25%; /* 100% (width da tela) dividido por 16 (quadrados por linha) dá 6,25% (Cada quadrado tem esse tamanho pra que sempre tenha um número fixo de quadrados por linha) */
 }
 div.quadrado_ativo{
     background-color: orange;

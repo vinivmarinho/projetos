@@ -22,3 +22,4 @@ My steps:
 
 Problems:
 - Consegui criar 1 quadrado, mas não consegui fazer o loop funcionar
+- Descobri que para haver a quebra, eu preciso no js criar uma variável que recebe um elemento (que por sua vez está dentro de um container que recebeu display flex e wrap). Parei quando descobri isso

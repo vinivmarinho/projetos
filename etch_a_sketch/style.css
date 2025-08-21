@@ -13,8 +13,10 @@ div#container{
     height: 100vh;
     background-color: rgb(97, 50, 50);
 }
-.quadrado{
+div.quadrado{
     background-color: red;
-    width: 85px;
+    border: 1px solid black;
     height: 37px;
+    /* Flex => flex-grow flex-shrink - flex basis */
+    flex: 1 1 6.25%; /* 100% (width da tela) dividido por 16 (quadrados por linha) dá 6,25% (Cada quadrado tem esse tamanho pra que sempre tenha um número fixo de quadrados na tela) */
 }

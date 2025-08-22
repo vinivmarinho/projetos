@@ -10,16 +10,16 @@ botao.addEventListener("click", () =>{
             let quadrado = document.createElement("div")
             quadrado.classList.add("quadrado")
             container.appendChild(quadrado)
-            // Obs: 1366(Largura total da tela). 580(599 height total da tela - 19px de altura do "button")
+            // Obs: 1366(Largura total da tela) dividido pela qtd de quadrados. 580(599 height total da tela - 19px de altura do "button" e divido pela quantidade de quadrados)
             let width = 100 / numero + "%" // Width de cada quadrado em porcentagem
-            let height = (580 / numero) // Height de cada quadrado
+            let height = (580 / numero)
             quadrado.style.cssText = `flex: 0 0 ${width}; height: ${height}px`
             quadrado.addEventListener("mouseenter", () => {
                 quadrado.classList.add("quadrado_ativo")
             })
             quadrado.addEventListener("mouseleave", () => {
                 quadrado.classList.remove("quadrado_ativo") 
-            })
+            }) 
         }
     }
 })
@@ -36,7 +36,7 @@ for (let inicio = 1; inicio <= 256; inicio++) {
     })
     quadrado.addEventListener("mouseleave", () => {
         quadrado.classList.remove("quadrado_ativo")
-    })
+    }) 
 }
 
 

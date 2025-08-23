@@ -5,19 +5,20 @@
     box-sizing: border-box;
 }
 header{
+     /* Header usa flexbox com wrap para que seus itens possam quebrar para a próxima linha quando necessário */
     background-color: #1F2937;
     height: 240px;
     color: white;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap; /* Flex na horizontal, permitindo quebra de linha */
 }
+
 div#primeira_linha{
     padding: 10px;
     display: flex;
     justify-content: space-around;
     background-color: red;
-    align-self: flex-start;
-    width: 100%;
+    width: 100%; /* Ocupa toda a largura disponível, fazendo com que os itens adjacentes quebrem para a próxima linha */
 }
 p#logo{
     color: #F9F1F8;
@@ -35,12 +36,16 @@ ul{
     }
 }
 div#segunda_linha{
-    background-color: blue;
     width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+}
+button{
+    width: 100px;
 }
 div#imagem_cabecalho{
-    background-color: orange;
-    width: 50px;
-    height: 50px;
-    
+    background-color: #6D747D;
+    width: 100px;
+    height: 70%;
 }

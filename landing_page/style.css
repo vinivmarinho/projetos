@@ -65,3 +65,21 @@ div#imagem_cabecalho{
     justify-content: center;
     align-items: center;
 }
+div#informacao{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    padding: 15px 10px 40px 10px;
+    height: 300px;
+}
+div#container_imagem{
+    display: flex;
+}
+div.imagem{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: 1px solid blue;
+}

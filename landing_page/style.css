@@ -38,14 +38,21 @@ ul{
 div#segunda_linha{
     width: 100%;
     display: flex;
-    flex-flow: column wrap;
-    align-content: space-around;
+    flex-flow: column wrap; /* Direção vertical e permite a quebra de linha */
+    background-color: blue;
+    text-align: justify;
 }
 button{
     width: 100px;
 }
+h1, p#subtitulo{
+    width: 50%;
+}
 div#imagem_cabecalho{
     background-color: #6D747D;
-    width: 100px;
+    width: 30%;
     height: 70%;
 }
+
+/* Parei tentando organizar o cabeçalho */
+/* Problema: Não consigo centralizar o título e a div#imagem_cabeçalho

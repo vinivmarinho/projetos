@@ -3,8 +3,32 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 header{
     background-color: #1F2937;
     color: white;
+    padding: 5px 10px 50px 10px;
+}
+div#barra_cabecalho{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+div#logo{
+    color: #F9F1F8;
+    font-size: 24px;
+}
+ul#links{
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+}
+div#conteudo{
+    display: flex;
+}
+div#imagem_cabecalho{
+    background-color: #6D747D;
+    width: 100px;
+    height: 100px;
 }

@@ -25,10 +25,43 @@ ul#links{
     gap: 50px;
 }
 div#conteudo{
+    /* Separa os itens (h1, p, button) da div#imagem_cabeçalho */
     display: flex;
+    justify-content: space-around;
+}
+h1#titulo{
+    color: #F9F1F8;
+    font-size: 48px;
+    font-weight: 800;
+}
+p#subtitulo{
+    max-width: 450px;
+    color: #E5E7EB;
+    font-size: 18px;
+    line-height: 30px;
+    
+}
+button{
+    width: 200px;
+    padding: 10px;
+    background-color: #3882F6;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s; /* 0.3segundos para fazer a transição (do hover */
+}
+button:hover{
+    transform: scale(1.1) /* Botão aumenta em 10% */
 }
 div#imagem_cabecalho{
+    display: flex;
+    flex: 0 1 400px; /* Grow => Shrink => Basis */
     background-color: #6D747D;
-    width: 100px;
-    height: 100px;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
 }

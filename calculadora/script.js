@@ -32,5 +32,3 @@ function divisao(...numeros) {
     }
     return total
 }
-
-console.log(divisao(100, 10, multiplicacao(1, 2)))

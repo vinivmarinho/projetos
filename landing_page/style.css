@@ -23,6 +23,12 @@ ul#links{
     display: flex;
     list-style-type: none;
     gap: 50px;
+    
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
 }
 div#conteudo{
     /* Separa os itens (h1, p, button) da div#imagem_cabeçalho */
@@ -99,4 +105,26 @@ div.subtexto{
     width: 140px;
     color: #616A76;
     font-size: 18px;
+}
+div#container_citacao{
+    background-color: #E5E7EB;
+    height: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    p#citacao{
+        width: 800px;
+        font-size: 36px;
+        font-style: italic;
+        font-weight: 300;
+    }
+    p#autor{
+        font-style: italic;
+        font-weight: 700;
+        font-size: 20px;
+        align-self: center;
+        margin-top: 10px;
+    }
 }

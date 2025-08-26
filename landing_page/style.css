@@ -128,3 +128,30 @@ div#container_citacao{
         margin-top: 10px;
     }
 }
+div#container_inscricao{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div#inscricao{
+        width: 900px;
+        background-color: #3B82F6;
+        display: flex;
+        padding: 3%;
+        
+        button{
+            border: 1px solid white;
+            width: 150px;
+            margin: 0px 10px 0px 80px;
+        }
+    }
+}
+p#paragrafo_1{
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+p#paragrafo_2{
+    color: #C7D5ED;
+}

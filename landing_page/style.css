@@ -70,16 +70,33 @@ div#informacao{
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-evenly;
-    border: 2px solid black;
     padding: 15px 10px 40px 10px;
     height: 300px;
+
+    h1{
+        color: #1F2937;
+        font-size: 36px;
+        font-weight: 900;
+    }
 }
 div#container_imagem{
+    width: auto;
     display: flex;
+    gap: 30px;
 }
 div.imagem{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border: 1px solid blue;
+    width: 140px;
+    height: 120px;
+    border: 3px solid #4085F6;
+}
+div#container_subtextos{
+    width: auto; /* Maior que a tela, não tem responsividade */
+    display: flex;
+    gap: 30px;
+}
+div.subtexto{
+    text-align: left;
+    width: 140px;
+    color: #616A76;
+    font-size: 18px;
 }

@@ -1,34 +1,37 @@
-function soma(...numeros) { // O "...numeros" pega todos os valores passados e transforma em um array
-    let total = 0
-    for (let numero of numeros) {
-        total += numero
-    }
-    return total
+function soma(n1, n2) {
+    let soma = n1 + n2
+    return soma;
 }
-function subtracao(...numeros) {
-    let total = numeros[0] // Começa com o primeiro número do array
-    for (let contador = 1; contador < numeros.length; contador++) {
-        total -= numeros[contador] // Subtrai de total o array "numeros" na posição de contador
-    }
-    return total
-}
-function multiplicacao(...numeros) {
-    let total = numeros[0]
-    for (let contador = 1; contador < numeros.length; contador++) {
-        total *= numeros[contador]
-    }
-    return total
+function subtracao(n1, n2) {
+    let subtracao = n1 - n2
+    return subtracao
 }
 
-function divisao(...numeros) {
-    let total = numeros[0]
-    for (let contador = 1; contador < numeros.length; contador++) {
-        if (numeros[contador] === 0) {
-            alert("Não é possível dividir por zero")
-            return null // Interrompe a função e retorna nulo
-        } else{
-            total /= numeros[contador]
-        }
+function multiplicacao(n1, n2) {
+    let multi = n1 * n2
+    return multi
+}
+
+function divisao(n1, n2) {
+    
+    if (n2 === 0) {
+        alert("Não é possível dividir por zero")
+        return null
+    } else {
+        let divisao = n1 / n2
+        return divisao
     }
-    return total
+    
+}
+// Função que recebe o operador e dependendo do que receber, vai chamar uma das funções já criadas
+function operacao(operador, n1, n2) {
+    if (operador === "+") {
+        return soma(n1, n2)
+    } else if (operador === "-") {
+        return subtracao(n1, n2)
+    } else if (operador === "*") {
+        return multiplicacao(n1, n2)
+    } else if (operador === "/") {
+        return divisao(n1, n2)
+    }
 }

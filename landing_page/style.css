@@ -139,7 +139,7 @@ div#container_inscricao{
         background-color: #3B82F6;
         display: flex;
         padding: 3%;
-        
+
         button{
             border: 1px solid white;
             width: 150px;
@@ -154,4 +154,10 @@ p#paragrafo_1{
 }
 p#paragrafo_2{
     color: #C7D5ED;
+}
+footer{
+    text-align: center;
+    color: white;
+    padding: 40px;
+    background-color: #1F2937;
 }

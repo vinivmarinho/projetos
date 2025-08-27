@@ -11,17 +11,3 @@ body{
     justify-content: center;
     align-items: center;
 }
-main{
-    width: 400px;
-    height: 580px;
-    background-color: #AAAAAA;
-    border: 2px solid black;
-    padding: 20px;
-}
-section#display{
-    background-color: #EEEEEE;
-    width: 100%;
-    height: 150px;
-    border: 3px solid black;
-    border-radius: 10px;
-}

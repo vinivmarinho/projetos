@@ -5,9 +5,40 @@
     box-sizing: border-box;
 }
 body{
-    height: 100vh;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+div#calculadora{
+    background-color: #AAA;
+    max-width: 400px;
+    height: 500px;
+    padding: 20px; /* Cria um espaço entre o container da calculadora e o container do display */
+
+    /* Container do resultado */
+    div#display{
+        background-color: white;
+        outline: 2px solid black;
+        width: 360px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+}
+div#container_botoes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: blue;
+    height: 340px; /* Ocupa o restante do espaço (embaixo da div#display) da div#calculadora */
+    
+    button#igual{
+        grid-column: span 2;
+    }
 }

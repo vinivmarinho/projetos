@@ -8,39 +8,40 @@
 </head>
 <body>
     <main>
+        <h1>Vinícius Marinho</h1>
         <div id="calculadora">
             <div id="display">
-                <div id="input_usuario"></div> <!--Botões clicados pelo usuário aparecem aqui-->
+                <div id="input_usuario">0</div> <!--Botões clicados pelo usuário aparecem aqui-->
                 <div id="resultado"></div> <!-- Resultado das operações aparece aqui-->
             </div>
         <div id="container_botoes">
             <!-- Primeira linha-->
-            <button>AC</button>
-            <button>C</button>
-            <button>%</button>
-            <button>÷</button>
+            <button onclick="limpar()">C</button>
+            <button onclick="apagar_ultimo()">DEL</button>
+            <button onclick="atualiza_display(%)">%</button>
+            <button onclick="atualiza_display(÷)">÷</button>
             <!-- Segunda linha-->
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>+</button>
+            <button onclick="atualiza_display(7)">7</button>
+            <button onclick="atualiza_display(8)">8</button>
+            <button onclick="atualiza_display(9)">9</button>
+            <button onclick="atualiza_display(+)">+</button>
             <!-- Terceira linha-->
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
+            <button onclick="atualiza_display(4)">4</button>
+            <button onclick="atualiza_display(5)">5</button>
+            <button onclick="atualiza_display(6)">6</button>
+            <button onclick="atualiza_display(-)">-</button>
             <!-- Quarta linha-->
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>x</button>
+            <button onclick="atualiza_display(1)">1</button>
+            <button onclick="atualiza_display(3)">2</button>
+            <button onclick="atualiza_display(3)">3</button>
+            <button onclick="atualiza_display(x)">x</button>
             <!-- Quinta linha-->
-            <button>0</button>
-            <button>.</button>
+            <button onclick="atualiza_display(0)">0</button>
+            <button onclick="atualiza_display(,)">.</button>
             <button id="igual">=</button>
         </div>
         </div>
     </main>
-    
+    <script src="script.js"></script>
 </body>
 </html>

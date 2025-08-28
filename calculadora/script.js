@@ -1,14 +1,27 @@
 let display = document.querySelector("div#input_usuario")
 let resultado = document.querySelector("div#resultado")
-let digitos = "" // String que guarda os dígitos digitados
-function atualiza_display(botao) {
-    digitos += botao
+let numeros = document.querySelectorAll("button.numero") // Todos os botões.numero"
+let digitos = ""
+numeros.forEach((botao) => {
+    botao.addEventListener("click", () => adiciona_numero(botao.textContent))
+}) // Parei aqui, adicionei um eventlistener pra cada botão, e ele chama a função "adiciona_numero"
+
+
+
+
+
+
+function adiciona_numero(numero) {
+    digitos += numero
     resultado.textContent = digitos
 }
+
+
 function limpar() { // Botão "C" chama essa função
     digitos = "" // Reseta os números
     resultado.textContent = "0" // Mostra 0 no display
 }
+
 function apagar_ultimo() { // Botão "Del" chama essa função
     digitos = digitos.slice(0, -1) // Apaga o último dígito de "numeros"
     resultado.textContent = digitos // mostra "numeros" no display
@@ -16,6 +29,28 @@ function apagar_ultimo() { // Botão "Del" chama essa função
         resultado.textContent = "0"
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function soma(n1, n2) {
     let soma = n1 + n2
     return soma;

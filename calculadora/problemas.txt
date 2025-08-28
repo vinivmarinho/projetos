@@ -5,3 +5,9 @@
 *
 *
 *
+
+
+- Idéia:
+* Fazer uma classe para os números e uma função para adicioná-los.
+* Fazer uma classe para os operadores para adicioná-los.
+* Tirar o onclick e adicionar o "eventlistener". 1 pare os números e outro para os operadores

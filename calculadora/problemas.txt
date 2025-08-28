@@ -1,0 +1,7 @@
+- Próximos passos:
+* Se eu digitar dois sinais de operação seguidos, o primeiro será substituído pelo segundo
+* Se depois de um cálculo (8+8) eu digitar outro sinal de operação, a conta de 8+8 será executada, e o resultado ficará com o outro sinal de operação. Exemplo: (8+8), digitei "-". O display fica (16-)
+* Quando um sinal for digitado, o digito e o sinal ficarão em cima
+*
+*
+*

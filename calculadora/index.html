@@ -11,33 +11,33 @@
         <h1>Vinícius Marinho</h1>
         <div id="calculadora">
             <div id="display">
-                <div id="input_usuario">0</div> <!--Botões clicados pelo usuário aparecem aqui-->
-                <div id="resultado"></div> <!-- Resultado das operações aparece aqui-->
+                <div id="input_usuario"></div> <!--Botões clicados pelo usuário aparecem aqui-->
+                <div id="resultado">0</div> <!-- Resultado das operações aparece aqui-->
             </div>
         <div id="container_botoes">
             <!-- Primeira linha-->
             <button onclick="limpar()">C</button>
             <button onclick="apagar_ultimo()">DEL</button>
-            <button onclick="atualiza_display(%)">%</button>
-            <button onclick="atualiza_display(÷)">÷</button>
+            <button class="operador" onclick="atualiza_display('%')">%</button>
+            <button class="operador" onclick="atualiza_display('÷')">÷</button>
             <!-- Segunda linha-->
             <button onclick="atualiza_display(7)">7</button>
             <button onclick="atualiza_display(8)">8</button>
             <button onclick="atualiza_display(9)">9</button>
-            <button onclick="atualiza_display(+)">+</button>
+            <button class="operador" onclick="atualiza_display('+')">+</button>
             <!-- Terceira linha-->
             <button onclick="atualiza_display(4)">4</button>
             <button onclick="atualiza_display(5)">5</button>
             <button onclick="atualiza_display(6)">6</button>
-            <button onclick="atualiza_display(-)">-</button>
+            <button class="operador" onclick="atualiza_display('-')">-</button>
             <!-- Quarta linha-->
             <button onclick="atualiza_display(1)">1</button>
             <button onclick="atualiza_display(3)">2</button>
             <button onclick="atualiza_display(3)">3</button>
-            <button onclick="atualiza_display(x)">x</button>
+            <button class="operador" onclick="atualiza_display('x')">x</button>
             <!-- Quinta linha-->
             <button onclick="atualiza_display(0)">0</button>
-            <button onclick="atualiza_display(,)">.</button>
+            <button onclick="atualiza_display('.')">.</button>
             <button id="igual">=</button>
         </div>
         </div>

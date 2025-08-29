@@ -1,18 +1,24 @@
 let display = document.querySelector("div#input_usuario")
 let resultado = document.querySelector("div#resultado")
-let numeros = document.querySelectorAll("button.numero") // Todos os botões.numero"
+let numeros = document.querySelectorAll("button.numero") // Todos os botões."numero"
+let operadores = document.querySelectorAll("button.operador") // Todos os botões."operador"
 let digitos = ""
-numeros.forEach((botao) => {
+numeros.forEach((botao) => { // Passa por todos botões dentro de "numeros"
+    // Adiciona um evento "click" que chama a função "adiciona_numero"
     botao.addEventListener("click", () => adiciona_numero(botao.textContent))
-}) // Parei aqui, adicionei um eventlistener pra cada botão, e ele chama a função "adiciona_numero"
-
-
-
-
-
+})
 
 function adiciona_numero(numero) {
     digitos += numero
+    resultado.textContent = digitos
+}
+
+operadores.forEach((botao) => {
+    botao.addEventListener("click", () => adiciona_operador(botao.textContent))
+})
+
+function adiciona_operador(operador) {
+    digitos += operador
     resultado.textContent = digitos
 }
 

@@ -2,6 +2,7 @@ let display = document.querySelector("div#input_usuario")
 let resultado = document.querySelector("div#resultado")
 let numeros = document.querySelectorAll("button.numero") // Todos os botões."numero"
 let operadores = document.querySelectorAll("button.operador") // Todos os botões."operador"
+let primeiro_operando = "" // Recebe os dígitos usados antes do sinal de operação
 let digitos = "" // Guarda toda a expressão
 let igual = document.getElementById("igual")
 let sinal = "" // Recebe o operador
@@ -23,9 +24,12 @@ operadores.forEach((botao) => {
 }) // Ok
 
 function adiciona_operador(operador) {
-    digitos += operador
-    resultado.textContent = digitos
-    sinal = operador
+    // Até aqui só tem números, por isso o primeiro_operando recebe "digitos"
+    primeiro_operando = digitos
+    display.textContent = digitos + operador
+    resultado.textContent = primeiro_operando // O "resultado" continua mostrando o(s) primeiro(s) número(s)
+    sinal = operador 
+    digitos = "" // Limpa os dígitos para receber o segundo número
 } // Ok
 
 
@@ -53,9 +57,6 @@ function operacao(operador, n1, n2) {
     n1 = parseFloat(digitos.substring(0, posicao)) // 0 => Do primeiro índice até a "posicao" (posicao do operador)
     n2 = parseFloat(digitos.substring(posicao + 1)) // posicao => Posição do operador até o final da string(é isso o que "+1" representa)
     if (operador === "+") {
-        display.textContent = n1
-        display.textContent += operador
-        display.textContent += n2
         resultado.textContent = soma(n1, n2)
     } else if (operador === "-") {
         return subtracao(n1, n2)

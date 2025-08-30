@@ -51,20 +51,24 @@ igual.addEventListener("click", () => operacao(sinal, n1, n2)) // O botão "igua
 
 // Função que recebe o operador e dependendo do operador, vai chamar uma das funções
 function operacao(operador, n1, n2) {
-    // "indexOf" encontra o índice da primeira ocorrência de um caractere
-    let posicao = digitos.indexOf(operador)
-    // Substring => extrai uma parte da string original, retornando uma nova string
-    n1 = parseFloat(digitos.substring(0, posicao)) // 0 => Do primeiro índice até a "posicao" (posicao do operador)
-    n2 = parseFloat(digitos.substring(posicao + 1)) // posicao => Posição do operador até o final da string(é isso o que "+1" representa)
+    display.textContent += digitos
+    display.textContent += "="
+    n1 = Number(primeiro_operando)
+    n2 = Number(digitos)
+    let resultado_operacao = ""
     if (operador === "+") {
-        resultado.textContent = soma(n1, n2)
+        resultado_operacao = soma(n1, n2)
     } else if (operador === "-") {
-        return subtracao(n1, n2)
+        resultado_operacao = subtracao(n1, n2)
     } else if (operador === "*") {
-        return multiplicacao(n1, n2)
+        resultado_operacao = multiplicacao(n1, n2)
     } else if (operador === "/") {
-        return divisao(n1, n2)
+        resultado_operacao = divisao(n1, n2)
+    } else if (operador === "%") {
+        resultado_operacao = modulo(n1, n2)
     }
+    resultado.textContent = resultado_operacao
+    digitos = resultado_operacao // Para que quando eu adicione outro número, o resultado apareça como operando 
 }
 
 
@@ -86,13 +90,14 @@ function multiplicacao(n1, n2) {
 function divisao(n1, n2) {
     
     if (n2 === 0) {
-        alert("Não é possível dividir por zero")
-        return null
+        return "Não é possível dividir por zero"
     } else {
         let divisao = n1 / n2
         return divisao
     }
-    
+}
+function modulo(n1, n2) {
+    return n1 % n2
 }
 
 

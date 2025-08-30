@@ -12,7 +12,7 @@ body{
 main{
     width: 100vw;
     height: 100vh;
-    background-color: gray;
+    background-color: rgb(204, 204, 204);
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -24,12 +24,13 @@ h1{
 }
 
 div#calculadora{
-    background-color: #17BEBB;
+    background-color: purple;
     max-width: 400px;
     height: 500px;
     padding: 20px; /* Cria um espaço entre o container da calculadora e o container do display */
     border: 2px solid black;
     /* Container do resultado */
+    border-radius: 30px;
     div#display{
         background-color: white;
         outline: 2px solid black;
@@ -38,11 +39,12 @@ div#calculadora{
         margin-bottom: 20px;
     }
 }
+
 div#display{
     font-size: 1.8em;
     padding: 10px;
     text-align: right;
-
+    border-radius: 30px;
     div#input_usuario{
         margin-bottom: 10px;
     }
@@ -50,7 +52,7 @@ div#display{
 div#container_botoes{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: #17BEBB;
+    background-color: purple;
     height: 340px; /* Ocupa o restante do espaço (embaixo da div#display) da div#calculadora */
     gap: 5px;
     

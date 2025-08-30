@@ -2,12 +2,14 @@ let display = document.querySelector("div#input_usuario")
 let resultado = document.querySelector("div#resultado")
 let numeros = document.querySelectorAll("button.numero") // Todos os botões."numero"
 let operadores = document.querySelectorAll("button.operador") // Todos os botões."operador"
+let ponto = document.getElementById("ponto")
 let primeiro_operando = "" // Recebe os dígitos usados antes do sinal de operação
 let digitos = "" // Guarda toda a expressão
 let igual = document.getElementById("igual")
 let sinal = "" // Recebe o operador
 let n1 = ""
 let n2 = ""
+
 
 numeros.forEach((botao) => { // Passa por todos botões dentro de "numeros"
     // Adiciona um evento "click" que chama a função "adiciona_numero"
@@ -46,6 +48,18 @@ function apagar_ultimo() { // Botão "Del" chama essa função
         resultado.textContent = "0"
     }
 }
+ponto.addEventListener("click", adiciona_ponto)
+function adiciona_ponto() {
+    if (!digitos.includes(".")) { // Se o dígito não tiver "."
+        let ponto = "."
+        if (digitos === "0") {
+            digitos = "0."
+        } else {
+            digitos += ponto    
+        }
+    }
+    resultado.textContent = digitos
+}
 igual.addEventListener("click", () => operacao(sinal, n1, n2)) // O botão "igual" chama a função "operacao" quando é clicado
 
 
@@ -53,8 +67,8 @@ igual.addEventListener("click", () => operacao(sinal, n1, n2)) // O botão "igua
 function operacao(operador, n1, n2) {
     display.textContent += digitos
     display.textContent += "="
-    n1 = Number(primeiro_operando)
-    n2 = Number(digitos)
+    n1 = parseFloat(primeiro_operando)
+    n2 = parseFloat(digitos)
     let resultado_operacao = ""
     if (operador === "+") {
         resultado_operacao = soma(n1, n2)

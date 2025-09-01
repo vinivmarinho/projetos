@@ -6,7 +6,7 @@ let ponto = document.getElementById("ponto")
 let primeiro_operando = "" // Recebe os dígitos usados antes do sinal de operação
 let digitos = "" // Guarda toda a expressão
 let igual = document.getElementById("igual")
-let sinal = "" // Recebe o operador
+let sinal = "x" // Recebe o operador
 let n1 = ""
 let n2 = ""
 
@@ -14,29 +14,37 @@ let n2 = ""
 numeros.forEach((botao) => { // Passa por todos botões dentro de "numeros"
     // Adiciona um evento "click" que chama a função "adiciona_numero"
     botao.addEventListener("click", () => adiciona_numero(botao.textContent))
-}) // Ok
+}) 
 
 function adiciona_numero(numero) { 
     digitos += numero
     resultado.textContent = digitos
-} // Ok
+} 
 
 operadores.forEach((botao) => {
     botao.addEventListener("click", () => adiciona_operador(botao.textContent))
-}) // Ok
+}) 
 
 function adiciona_operador(operador) {
-    // Até aqui só tem números, por isso o primeiro_operando recebe "digitos"
-    primeiro_operando = digitos
-    display.textContent = digitos + operador
-    resultado.textContent = primeiro_operando // O "resultado" continua mostrando o(s) primeiro(s) número(s)
-    sinal = operador 
-    digitos = "" // Limpa os dígitos para receber o segundo número
-} // Ok
+    // Já existe uma operação pendente => Resolve antes de continuar
+    if (primeiro_operando != "" && digitos != "") {
+        let resultado_operacao = operacao(sinal, parseFloat(primeiro_operando), parseFloat(digitos))
+        resultado.textContent = resultado_operacao
+        primeiro_operando = resultado_operacao
+        digitos = "" // Limpa os dígitos para receber o segundo número
+    } else { // Primeira vez que o operador é clicado
+        primeiro_operando = digitos // Recebe a primeira parte da expressão
+        digitos = ""
+    }
+    display.textContent = primeiro_operando + operador
+    sinal = operador
+    
+} 
 
 
 function limpar() { // Botão "C" chama essa função
     digitos = "" // Reseta os números
+    primeiro_operando = "" 
     resultado.textContent = "0" // Mostra 0 no display
     display.textContent = ""
 } // Ok
@@ -60,7 +68,15 @@ function adiciona_ponto() {
     }
     resultado.textContent = digitos
 }
-igual.addEventListener("click", () => operacao(sinal, n1, n2)) // O botão "igual" chama a função "operacao" quando é clicado
+igual.addEventListener("click", () => {
+    if (primeiro_operando != "" && digitos != "") {
+        let resultado_operacao = operacao(sinal, parseFloat(primeiro_operando), parseFloat(digitos))
+        display.textContent = primeiro_operando + sinal + digitos + "="
+        resultado.textContent = resultado_operacao
+        digitos = resultado_operacao
+        primeiro_operando = ""
+    }
+}) // O botão "igual" chama a função "operacao" quando é clicado
 
 
 // Função que recebe o operador e dependendo do operador, vai chamar uma das funções
@@ -69,20 +85,13 @@ function operacao(operador, n1, n2) {
     display.textContent += "="
     n1 = parseFloat(primeiro_operando)
     n2 = parseFloat(digitos)
-    let resultado_operacao = ""
-    if (operador === "+") {
-        resultado_operacao = soma(n1, n2)
-    } else if (operador === "-") {
-        resultado_operacao = subtracao(n1, n2)
-    } else if (operador === "*") {
-        resultado_operacao = multiplicacao(n1, n2)
-    } else if (operador === "/") {
-        resultado_operacao = divisao(n1, n2)
-    } else if (operador === "%") {
-        resultado_operacao = modulo(n1, n2)
-    }
+    if (operador === "+") return soma(n1, n2)
+    if (operador === "-") return subtracao(n1, n2)
+    if (operador === "x") return multiplicacao(n1, n2)
+    if (operador === "/") return divisao(n1, n2)
+    if (operador === "%") return modulo(n1, n2)
     resultado.textContent = resultado_operacao
-    digitos = resultado_operacao // Para que quando eu adicione outro número, o resultado apareça como operando 
+    primeiro_operando = resultado_operacao // Para que quando eu adicione outro número, o resultado apareça como operando 
 }
 
 
@@ -97,7 +106,7 @@ function subtracao(n1, n2) {
 }
 
 function multiplicacao(n1, n2) {
-    let multi = n1 * n2
+    let multi = n1 * n2 
     return multi
 }
 

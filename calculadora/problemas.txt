@@ -1,5 +1,1 @@
-- Como vou separar os números de antes e depois do operador:
-Usar a variável digitos que contém a expressão completa (ex: "12+34").
-Encontrar a posição do operador (sinal) dentro dessa string.
-Extrair a parte antes do operador como n1 e a parte depois como n2.
-Converter essas partes para números (usando 'parseFloat')
+- Se eu já tenho uma conta em andamento e aperto em um botão de operação, eu quero resolver a primeira conta e o resultado sobe com o sinal de operação

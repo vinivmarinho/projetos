@@ -7,8 +7,6 @@ let primeiro_operando = "" // Recebe os dígitos usados antes do sinal de opera�
 let digitos = "" // Guarda toda a expressão
 let igual = document.getElementById("igual")
 let sinal = "x" // Recebe o operador
-let n1 = ""
-let n2 = ""
 
 
 numeros.forEach((botao) => { // Passa por todos botões dentro de "numeros"
@@ -26,18 +24,23 @@ operadores.forEach((botao) => {
 }) 
 
 function adiciona_operador(operador) {
+    console.log(`Operando: ${primeiro_operando}`)
+    console.log(`Dígitos: ${digitos}`)
     // Já existe uma operação pendente => Resolve antes de continuar
     if (primeiro_operando != "" && digitos != "") {
+        console.log(`Operando: ${primeiro_operando}`)
         let resultado_operacao = operacao(sinal, parseFloat(primeiro_operando), parseFloat(digitos))
         resultado.textContent = resultado_operacao
         primeiro_operando = resultado_operacao
         digitos = "" // Limpa os dígitos para receber o segundo número
     } else { // Primeira vez que o operador é clicado
-        primeiro_operando = digitos // Recebe a primeira parte da expressão
+        primeiro_operando += digitos // Recebe a primeira parte da expressão. (OBS: Não limpa o "primeiro_operando", fazendo com que a troca de operadores não remova o número que está antes)
         digitos = ""
+        
     }
-    display.textContent = primeiro_operando + operador
     sinal = operador
+    display.textContent = primeiro_operando + operador 
+    
     
 } 
 
@@ -88,7 +91,7 @@ function operacao(operador, n1, n2) {
     if (operador === "+") return soma(n1, n2)
     if (operador === "-") return subtracao(n1, n2)
     if (operador === "x") return multiplicacao(n1, n2)
-    if (operador === "/") return divisao(n1, n2)
+    if (operador === "÷") return divisao(n1, n2)
     if (operador === "%") return modulo(n1, n2)
     resultado.textContent = resultado_operacao
     primeiro_operando = resultado_operacao // Para que quando eu adicione outro número, o resultado apareça como operando 

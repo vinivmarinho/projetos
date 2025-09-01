@@ -1,1 +1,0 @@
-- Se eu já tenho uma conta em andamento e aperto em um botão de operação, eu quero resolver a primeira conta e o resultado sobe com o sinal de operação

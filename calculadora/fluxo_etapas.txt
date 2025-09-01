@@ -1,0 +1,36 @@
+Variáveis:
+- display => guarda o espaço onde os itens serão mostrados
+- resultado => guarda o espaço onde o resultado da operação será mostrado
+- numeros => Se refere a todos os botões que são números
+- operadores => Se refere a todos os botões que são operadores
+- ponto => Ponto (.)
+- primeiro_operando => Dígitos usados antes do operador ou o resultado de uma operação
+- Digitos => Guarda o(s) número(s) que o usuário está escolhendo
+- Igual => Sinal(=)
+- resultado_operacao => Resultado das operações
+
+Fluxo de Execução:
+1-> Usuário escolhe os números(12)
+- Função: Adiciona_numero(12)
+- "Digitos" = 12
+- "resultado" mostra digitos
+
+2-> Usuário clica em um operador(+ - x ÷)
+- Função: adiciona_operador
+- Condição: primeiro_operando e digitos não estiverem vazios => operação pendente:
+* Ações executadas:
+    - "resultado_operacao recebe o retorno da função operacao() => Resultado da conta
+    - "resultado" mostra "resultado_operacao"
+    - Primeiro_operando = resultado_operacao
+    - Limpa "digitos" para receber o próxio número
+
+
+- Se for a primeira operação ("primeiro_operando" vazio):
+* Ações executadas:
+    - primeiro_operando += digitos => Recebe a primeira parte da expressão
+    - Limpa "digitos" para receber o próximo número
+    - Se o usuário clicar em operadores várias vezes, sempre cairá aqui (apenas atualiza o operador, sem alterar o número armazenado)
+
+
+- Sinal = operador
+- "display" mostra "primeiro_operando" e o "sinal"

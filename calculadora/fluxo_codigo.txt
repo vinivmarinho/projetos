@@ -1,0 +1,65 @@
+Usuário digita um número("12"):
+    |
+    ↓
+Função: adiciona_numero("12")
+    | 
+    ├ digitos = "12"
+    ├ primeiro_operando = ""
+    ├ "resultado" mostra "digitos"
+Usuário clica em um operador "+"
+    |
+    ↓
+Função: adiciona_operador("+")
+    |
+    ├ Se for primeira operação:
+    |   ├ primeiro_operando = digitos => "12"
+    |   ├ Limpa "digitos"
+    ├ sinal = operador => "+"
+    ├ display mostra primeiro_operando("12) e sinal("+") => "display" = 12+. (obs: se usuário mudar o sinal agora, ele irá cair na linha acima.)
+
+Usuário digita um número("7"):
+    |
+    ↓
+Função: adiciona_numero("7"):
+    |
+    ├ digitos = "7"
+    ├ "resultado" mostra "digitos"
+Usuário clica em um operador ("-")
+    |
+    ↓
+Função: adiciona_operador("-"):
+    |
+    ├ Operação pendente ("primeiro_operando" e "digitos" não estão vazios):
+    |   ├ resultado_operacao = operacao("+", 12, 7) = 19
+    |   ├ "resultado" mostra "resultado_operacao"
+    |   ├ primeiro_operando = resultado_operacao (primeiro_operando = 19)
+    |   ├ Limpa "digitos"
+    ├ sinal = operador => "-"
+    ├ "display" mostra primeiro_operando (19) e sinal ("-") => "display" = 19-1
+    |
+    ↓
+Usuário escolhe número "1":
+    |
+    ↓
+Função adiciona_numero("1):
+    |
+    ├ digitos = "1"
+    ├ "resultado" mostra "digitos"
+    |
+    ↓
+Usuário aperta "="
+    |
+    ↓
+Função: igual.addEventListener("click")
+    |
+    ├ resultado_operacao = operacao("=", 19, 1) = 18
+    ├ "display" mostra (primeiro_operando + sinal + digitos + "=") => 19 - 1 =
+    ├ "resultado" mostra "resultado_operacao" => 18
+    ├ digitos = resultado_operacao => 18
+    ├ Limpa "primeiro_operando"
+    |
+    ↓
+usuário continua operações
+    |
+    ­­└─  Operações encadeadas: próximo número + operador
+        └─  "primeiro_operando" recebe digitos (resultado anterior)

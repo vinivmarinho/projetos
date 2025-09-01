@@ -24,11 +24,8 @@ operadores.forEach((botao) => {
 }) 
 
 function adiciona_operador(operador) {
-    console.log(`Operando: ${primeiro_operando}`)
-    console.log(`Dígitos: ${digitos}`)
     // Já existe uma operação pendente => Resolve antes de continuar
     if (primeiro_operando != "" && digitos != "") {
-        console.log(`Operando: ${primeiro_operando}`)
         let resultado_operacao = operacao(sinal, parseFloat(primeiro_operando), parseFloat(digitos))
         resultado.textContent = resultado_operacao
         primeiro_operando = resultado_operacao
@@ -36,10 +33,11 @@ function adiciona_operador(operador) {
     } else { // Primeira vez que o operador é clicado
         primeiro_operando += digitos // Recebe a primeira parte da expressão. (OBS: Não limpa o "primeiro_operando", fazendo com que a troca de operadores não remova o número que está antes)
         digitos = ""
+        console.log(primeiro_operando)
         
     }
     sinal = operador
-    display.textContent = primeiro_operando + operador 
+    display.textContent = primeiro_operando + sinal
     
     
 } 

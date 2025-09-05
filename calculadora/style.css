@@ -70,6 +70,31 @@ div#container_botoes{
         grid-column: span 2;
     }
 }
+main ul{
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap; 
+    gap: 20px;
+    /* Usei absolute para "desgrudar" o <ul> do fluxo normal (da página) e poder fixá-lo na lateral direita da tela */
+    position: absolute;
+    /* Mantém o ul sempre 20px afastado da borda direita */
+    right: 20px;
+}
+main img{
+    position: relative; /* mantém a posição normal, mas permite ajustes */
+    top: 70px; /* empurra a imagem 70px para baixo */
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.322);
+    box-sizing: border-box;
+    
+}
+main img:hover{
+    box-shadow: 2px 2px 5px 3px black;
+    border: 2px solid rgba(255, 255, 255, 0.76);
+    transition: transform 0.5s;
+}
 /* Laranja = #E4572E
    Azul = #17BEBB
 */

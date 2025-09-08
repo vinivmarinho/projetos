@@ -5,16 +5,27 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #F5F5DC;
+    background-color: gray;
 }
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    background-color: #d1c4c0;
+    background-color: #e5e3e2;
     button{
         margin-right: 70px;
+        padding: 10px;
+        background-color: #D2B48C;
+        border: none;
+        width: 145px;
+        height: 35px;
+    }
+    button:hover{
+        cursor: pointer;
+        width: 155px;
+        height: 45px;
+        border: 2px solid black;
     }
     h1{
         margin-left: 70px;
@@ -23,5 +34,31 @@ header{
 main {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
+    button{
+        background-color: gray;
+        font-size: 2em;
+        border: none;
+        padding: 10px;
+        margin: auto;
+    }
+    button:hover{
+        background-color: #D8D8D8;
+        cursor: pointer;
+    }
+}
+div#cards{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    background-color: purple;
+
+}
+div.card{
+    background-color: #FAF3E0;
+    width: 30%; /* Largura para caber 3 cartões em uma mesma linha */
+    height: 250px;
+    margin: 15px; 
+    border-radius: 10px;
 }

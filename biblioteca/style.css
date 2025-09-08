@@ -35,7 +35,7 @@ main {
     margin-top: 20px;
     display: flex;
     flex-flow: column nowrap;
-    button{
+    button#adicionar{
         background-color: gray;
         font-size: 2em;
         border: none;
@@ -52,7 +52,6 @@ div#cards{
     display: flex;
     justify-content: space-evenly;
     flex-flow: row wrap;
-    background-color: purple;
 
 }
 div.card{
@@ -61,4 +60,14 @@ div.card{
     height: 250px;
     margin: 15px; 
     border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    p, button{
+        margin-top: 15px;
+        font-size: 1.5em;
+    }
+    button{
+        width: 90%;
+    }
 }

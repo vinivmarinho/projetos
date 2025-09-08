@@ -15,7 +15,16 @@ function adiciona_livro(livro) {
    livraria.push(livro) // Array adiciona o objeto "Livro"
    console.log(`${livro["titulo"]} adicionado com sucesso`)
 }
+
+function display_livro(array_livraria) {
+    // Percorre o Array e mostra todos os livros
+    for (livro of array_livraria) {
+        console.log(`${livro.titulo}`)
+    }
+}
+
 livro1 = new cria_livro("Harry Potter", "Fulano", 2025)
 livro2 = new cria_livro("Percy Jackson", "Ciclano", 2000)
 adiciona_livro(livro1)
 adiciona_livro(livro2)
+display_livro(livraria)

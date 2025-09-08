@@ -1,3 +1,8 @@
+let adicionar = document.querySelector("button#adicionar")
+let redes_sociais = document.querySelector("button#redes_sociais")
+
+
+
 // Array de livros
 const livraria = []
 

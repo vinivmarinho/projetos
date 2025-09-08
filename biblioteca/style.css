@@ -20,6 +20,7 @@ header{
         border: none;
         width: 145px;
         height: 35px;
+        display: none;
     }
     button:hover{
         cursor: pointer;
@@ -42,8 +43,10 @@ main {
         padding: 10px;
         margin: auto;
     }
-    button:hover{
+    button#adicionar:hover{
         background-color: #D8D8D8;
+    }
+    button{
         cursor: pointer;
     }
 }
@@ -70,4 +73,16 @@ div.card{
     button{
         width: 90%;
     }
+}
+form#formulario{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    position: fixed; /* Elemento fica fixo na tela (independente da rolagem) */
+    /* Centralizo o formulário no meio da página */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Formulário ficará por cima de outros elementos não tela que tenham um z-index menor ou não tenham z-index definido */
+    z-index: 4;
 }

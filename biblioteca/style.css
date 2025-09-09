@@ -78,8 +78,8 @@ form#formulario{
     background-color: rgb(192, 192, 192);
     min-width: 300px;
     max-width: 400px;
-    max-height: 400px;
-    min-height: 300px;
+    max-height: 450px;
+    min-height: 350px;
     border-radius: 15px;
     border: 2px solid black;
     position: fixed; /* Elemento fica fixo na tela (independente da rolagem) */
@@ -96,4 +96,36 @@ form#formulario{
     h1{
         font-size: 1.7em;
     }
+}
+form#formulario input[type="text"]{
+    padding: 10px;
+    margin-top: 10px;
+    width: 90%;
+    border: none;
+    font-size: 1.4em;
+}
+form#formulario button{
+    width: 90%;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #45A049;
+    border: none;
+    font-size: 1.3em;
+}
+form#formulario label{
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+form#formulario input[type="checkbox"] {
+    transform: scale(1.5); /* Aumenta em 1.5x */
+    margin-left: 10px;
+}
+form#formulario input[type="range"] {
+    margin-top: 10px;
+}
+form#formulario input[type="submit"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
 }

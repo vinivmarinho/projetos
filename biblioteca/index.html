@@ -24,7 +24,16 @@
             </div>
         
         </div> 
-    <form id="formulario"></form>
+    <form id="formulario">
+        <h1>Add novo livro</h1>
+        <input type="text" name="titulo" id="id_titulo" placeholder="Título">
+        <input type="text" name="autor" id="id_autor" placeholder="Autor">
+        <input type="text" name="ano" id="id_ano" placeholder="Ano de lançamento">
+        <button>Lido</button>
+        <label for="id_classificacao">De 1 a 10, avalie o livro</label>
+        <input type="range" name="classificacao" id="id_classificacao" min="1" max="10" value="5" oninput="valor.innerText=this.value"> <!-- Sempre que mudar o valor do range, o evento "oninput" atualiza o texto do elemento com id "valor" para mostrar o valor atual do input ("this.value")-->
+        <span id="valor">5</span>
+    </form>
         </div>
     </main>
     <script src="script.js"></script>

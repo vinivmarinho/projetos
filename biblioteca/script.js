@@ -1,7 +1,22 @@
 let adicionar = document.querySelector("button#adicionar")
 let redes_sociais = document.querySelector("button#redes_sociais")
-
-
+let checkbox = document.querySelector("input#id_lido")
+let label_classificacao = document.querySelector("label#label_classificacao")
+let input_classificacao = document.querySelector("input#id_classificacao")
+let span_valor = document.querySelector("span#valor")
+// Verifica se o checkbox está marcado
+checkbox.addEventListener("change", verificar)
+function verificar() {
+    if (checkbox.checked) {
+        label_classificacao.style.cssText = "display: block;"
+        input_classificacao.style.cssText = "display: block;"
+        span_valor.style.cssText = "display: block;"
+    } else if (!checkbox.checked) {
+        label_classificacao.style.cssText = "display: none;"
+        input_classificacao.style.cssText = "display: none;"
+        span_valor.style.cssText = "display: none;"
+    }
+}
 
 // Array de livros
 const livraria = []

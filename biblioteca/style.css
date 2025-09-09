@@ -116,16 +116,26 @@ form#formulario label{
     margin-top: 10px;
     font-size: 1.3em;
 }
+
 form#formulario input[type="checkbox"] {
     transform: scale(1.5); /* Aumenta em 1.5x */
     margin-left: 10px;
 }
+form#formulario label#label_classificacao{
+    display: none;
+}
 form#formulario input[type="range"] {
     margin-top: 10px;
+    display: none;
+    
+}
+form#formulario span#valor{
+    display: none;
 }
 form#formulario input[type="submit"] {
     width: 90%;
     padding: 10px;
     font-size: 1.2em;
     cursor: pointer;
+    margin-top: 5px;
 }

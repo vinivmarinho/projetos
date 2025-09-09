@@ -33,7 +33,7 @@
             <input type="checkbox" name="lido" id="id_lido">
         </label>
         
-        <label for="id_classificacao">De 1 a 10, avalie o livro</label>
+        <label for="id_classificacao" id="label_classificacao">De 1 a 10, avalie o livro</label>
         <input type="range" name="classificacao" id="id_classificacao" min="1" max="10" value="5" oninput="valor.innerText=this.value"> <!-- Sempre que mudar o valor do range, o evento "oninput" atualiza o texto do elemento com id "valor" para mostrar o valor atual do input ("this.value")-->
         <span id="valor">5</span>
         <input type="submit" id="input_adicionar" value="Adicionar">

@@ -1,9 +1,9 @@
 let adicionar = document.querySelector("button#adicionar")
 let redes_sociais = document.querySelector("button#redes_sociais")
 let checkbox = document.querySelector("input#id_lido")
-let info_titulo = document.querySelector("p#titulo") // Título do livro (no cartão)
-let info_autor = document.querySelector("p#autor") // Autor do Livro (no cartão)
-let info_ano = document.querySelector("p#ano") // Ano de lançamento do Livro (no cartão)
+let info_titulo = document.querySelector("p.titulo") // Título do livro (no cartão)
+let info_autor = document.querySelector("p.autor") // Autor do Livro (no cartão)
+let info_ano = document.querySelector("p.ano") // Ano de lançamento do Livro (no cartão)
 let submit = document.querySelector("input#id_submit") // "adicionar" do formulário
 let label_classificacao = document.querySelector("label#label_classificacao")
 let input_classificacao = document.querySelector("input#id_classificacao")
@@ -11,7 +11,7 @@ let span_valor = document.querySelector("span#valor")
 let formulario = document.querySelector("form#formulario")
 
 let documento = document.querySelector("html")
-let jaLido = document.querySelector("button#jaLido")
+let jaLido = document.querySelector("button.jaLido")
 
 // Verifica se o checkbox está marcado.
 checkbox.addEventListener("change", verificar)
@@ -96,7 +96,7 @@ function armazena_livro(livro) {
 
 
 
-function display_livro(livraria) {
+function display_livro(livraria) { // Futuramente posso usar essa função para ir criando divs para cada objeto no array de livraria
     // Percorre o Array e mostra todos os livros
     for (livro in livraria) {
         // alert(livraria)

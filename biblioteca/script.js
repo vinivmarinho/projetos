@@ -23,7 +23,7 @@ function verificar() {
 // Chama o formulário quando aperta no botão "adicionar"
 adicionar.addEventListener("click", display_formulario)
 function display_formulario() {
-    formulario.style.display = "block"
+    formulario.style.display = "flex"
 
 }
 documento.addEventListener("click", function(evento) {

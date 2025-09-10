@@ -16,9 +16,9 @@
         <button id="adicionar">+Add Livro</button>
         <div id="cards"> <!--Container que guardará os cartões-->
             <div class="card">
-                <p>Harry Potter</p>
-                <p>J. K. Rowling</p>
-                <p>1997</p>
+                <p id="titulo">Harry Potter</p>
+                <p id="autor">J. K. Rowling</p>
+                <p id="ano">1997</p>
                 <button id="jaLido">Já lido</button>
                 <button id="remover">Remover</button>
             </div>
@@ -36,7 +36,7 @@
         <label for="id_classificacao" id="label_classificacao">De 1 a 10, avalie o livro</label>
         <input type="range" name="classificacao" id="id_classificacao" min="1" max="10" value="5" oninput="valor.innerText=this.value"> <!-- Sempre que mudar o valor do range, o evento "oninput" atualiza o texto do elemento com id "valor" para mostrar o valor atual do input ("this.value")-->
         <span id="valor">5</span>
-        <input type="submit" id="input_adicionar" value="Adicionar">
+        <input type="submit" id="id_submit" value="Adicionar">
     </form>
         </div>
     </main>

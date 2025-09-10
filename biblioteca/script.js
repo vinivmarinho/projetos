@@ -1,12 +1,18 @@
 let adicionar = document.querySelector("button#adicionar")
 let redes_sociais = document.querySelector("button#redes_sociais")
 let checkbox = document.querySelector("input#id_lido")
+let info_titulo = document.querySelector("p#titulo") // Título do livro (no cartão)
+let info_autor = document.querySelector("p#autor") // Autor do Livro (no cartão)
+let info_ano = document.querySelector("p#ano") // Ano de lançamento do Livro (no cartão)
+let submit = document.querySelector("input#id_submit") // "adicionar" do formulário
 let label_classificacao = document.querySelector("label#label_classificacao")
 let input_classificacao = document.querySelector("input#id_classificacao")
 let span_valor = document.querySelector("span#valor")
 let formulario = document.querySelector("form#formulario")
+
 let documento = document.querySelector("html")
 let jaLido = document.querySelector("button#jaLido")
+
 // Verifica se o checkbox está marcado.
 checkbox.addEventListener("change", verificar)
 function verificar() {
@@ -35,6 +41,7 @@ documento.addEventListener("click", function(evento) {
 })
 
 // Muda a cor do botão "Lido" ou "Não lido"
+// Problema: Só funciona com 1 cartão
 jaLido.addEventListener("click", () => {
     if (jaLido.innerText === "Já lido") {
         jaLido.style.cssText = "background-color: #E58C8C;"
@@ -45,6 +52,31 @@ jaLido.addEventListener("click", () => {
     }
 })
 
+// Adiciona os valores do formulário à um cartão
+submit.addEventListener("click", salva_livro)
+function salva_livro() { // Salva info do formulário em um cartão
+    let input_titulo = document.querySelector("input#id_titulo") // Valor do input do título
+    let input_autor = document.querySelector("input#id_autor") // Valor do input do autor
+    let input_ano = document.querySelector("input#id_ano") // Valor do input do ano de lançamento
+    let harry_potter = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
+    armazena_livro(harry_potter)
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Array de livros
 const livraria = []
 
@@ -54,24 +86,26 @@ function cria_livro(titulo, autor, ano) {
     this.autor = autor
     this.ano = ano
     this.id = crypto.randomUUID() // Gera um id único
-    console.log("Livro criado com sucesso!")
-    console.log(`Título: ${this.titulo}, autor: ${this.autor}, ano: ${this.ano}, Id: ${this.id}`)
 }
-function adiciona_livro(livro) {
+function armazena_livro(livro) {
    // Adiciona o livro à "livraria"
    livraria.push(livro) // Array adiciona o objeto "Livro"
-   console.log(`${livro["titulo"]} adicionado com sucesso`)
+   alert(`${livro["titulo"]} adicionado com sucesso`)
 }
 
-function display_livro(array_livraria) {
+
+
+
+function display_livro(livraria) {
     // Percorre o Array e mostra todos os livros
-    for (livro of array_livraria) {
-        console.log(`${livro.titulo}`)
+    for (livro in livraria) {
+        // alert(livraria)
     }
 }
 
-livro1 = new cria_livro("Harry Potter", "Fulano", 2025)
+/* livro1 = new cria_livro("Harry Potter", "Fulano", 2025)
 livro2 = new cria_livro("Percy Jackson", "Ciclano", 2000)
-adiciona_livro(livro1)
-adiciona_livro(livro2)
-display_livro(livraria)
+
+armazena_livro(livro1)
+armazena_livro(livro2)
+display_livro(livraria) */

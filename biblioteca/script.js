@@ -6,6 +6,7 @@ let input_classificacao = document.querySelector("input#id_classificacao")
 let span_valor = document.querySelector("span#valor")
 let formulario = document.querySelector("form#formulario")
 let documento = document.querySelector("html")
+let jaLido = document.querySelector("button#jaLido")
 // Verifica se o checkbox está marcado.
 checkbox.addEventListener("change", verificar)
 function verificar() {
@@ -32,7 +33,17 @@ documento.addEventListener("click", function(evento) {
         formulario.style.display = "none"
     }
 })
-    
+
+// Muda a cor do botão "Lido" ou "Não lido"
+jaLido.addEventListener("click", () => {
+    if (jaLido.innerText === "Já lido") {
+        jaLido.style.cssText = "background-color: #E58C8C;"
+        jaLido.innerText = "Não lido"
+    } else if (jaLido.innerText === "Não lido") {
+        jaLido.style.cssText = "background-color: #74bb71"
+        jaLido.innerText = "Já lido"
+    }
+})
 
 // Array de livros
 const livraria = []

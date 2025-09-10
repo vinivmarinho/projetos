@@ -4,10 +4,12 @@ let checkbox = document.querySelector("input#id_lido")
 let label_classificacao = document.querySelector("label#label_classificacao")
 let input_classificacao = document.querySelector("input#id_classificacao")
 let span_valor = document.querySelector("span#valor")
-// Verifica se o checkbox está marcado
+let formulario = document.querySelector("form#formulario")
+let documento = document.querySelector("html")
+// Verifica se o checkbox está marcado.
 checkbox.addEventListener("change", verificar)
 function verificar() {
-    if (checkbox.checked) {
+    if (checkbox.checked) { // Se estiver marcado: O input de classificação aparece para o usuário avaliar o livro
         label_classificacao.style.cssText = "display: block;"
         input_classificacao.style.cssText = "display: block;"
         span_valor.style.cssText = "display: block;"
@@ -17,6 +19,20 @@ function verificar() {
         span_valor.style.cssText = "display: none;"
     }
 }
+
+// Chama o formulário quando aperta no botão "adicionar"
+adicionar.addEventListener("click", display_formulario)
+function display_formulario() {
+    formulario.style.display = "block"
+
+}
+documento.addEventListener("click", function(evento) {
+    // Se o alvo do clique(evento.target) estiver fora do formulário e o alvo do clique for diferente do botão "adicionar", o formulário desaparece
+    if (!formulario.contains(evento.target) && evento.target !== adicionar) {
+        formulario.style.display = "none"
+    }
+})
+    
 
 // Array de livros
 const livraria = []

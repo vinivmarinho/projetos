@@ -13,14 +13,13 @@ header{
     align-items: center;
     height: 100px;
     background-color: #e5e3e2;
-    button{
+    button{ /* "Minhas redes sociais" */
         margin-right: 70px;
         padding: 10px;
         background-color: #D2B48C;
         border: none;
         width: 145px;
         height: 35px;
-        display: none;
     }
     button:hover{
         cursor: pointer;
@@ -50,14 +49,14 @@ main {
         cursor: pointer;
     }
 }
-div#cards{
+div#cards{ /* Container que guarda os cartões com os livros */
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-flow: row wrap;
 
 }
-div.card{
+div.card{ /* Cada cartão individual que mostra as infos dos livros */
     background-color: #FAF3E0;
     width: 30%; /* Largura para caber 3 cartões em uma mesma linha */
     height: 250px;
@@ -93,18 +92,19 @@ form#formulario{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    display: none;
     h1{
         font-size: 1.7em;
     }
 }
-form#formulario input[type="text"]{
+form#formulario input[type="text"]{ 
     padding: 10px;
     margin-top: 10px;
     width: 90%;
     border: none;
     font-size: 1.4em;
 }
-form#formulario button{
+form#formulario button{ /* Todos os botões */
     width: 90%;
     margin-top: 10px;
     padding: 5px;
@@ -112,30 +112,37 @@ form#formulario button{
     border: none;
     font-size: 1.3em;
 }
-form#formulario label{
+form#formulario label{ /* Todas as labels ("Já li esse livro" e "De 1 a 10, avalie o livro" */
     margin-top: 10px;
     font-size: 1.3em;
 }
 
-form#formulario input[type="checkbox"] {
+form#formulario input[type="checkbox"] { /* Checkbox */
     transform: scale(1.5); /* Aumenta em 1.5x */
     margin-left: 10px;
 }
-form#formulario label#label_classificacao{
+form#formulario label#label_classificacao{ /* "De 1 a 10, avalie o livro" */
     display: none;
 }
-form#formulario input[type="range"] {
+form#formulario input[type="range"] { /* Barra de avaliação */
     margin-top: 10px;
     display: none;
     
 }
-form#formulario span#valor{
+form#formulario span#valor{ /* Número embaixo da barra */
     display: none;
 }
-form#formulario input[type="submit"] {
+form#formulario input[type="submit"] { /* Adicionar */
     width: 90%;
     padding: 10px;
     font-size: 1.2em;
     cursor: pointer;
     margin-top: 5px;
+    background-color: #8FE58C;
+    border: none;
+    border-radius: 15px;
+}
+form#formulario input[type="submit"]:hover{
+    font-size: 1.4em;
+    background-color: #74bb71;
 }

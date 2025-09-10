@@ -71,6 +71,17 @@ div.card{ /* Cada cartão individual que mostra as infos dos livros */
     }
     button{
         width: 90%;
+        border-radius: 15px;
+        background-color: rgb(243, 158, 0);
+        padding: 5px;
+        border: none;
+    }
+    button#jaLido{
+        background-color: #74bb71;
+        
+    }
+    button:hover{
+        font-size: 1.7em;
     }
 }
 form#formulario{

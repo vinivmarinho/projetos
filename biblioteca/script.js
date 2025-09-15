@@ -31,12 +31,16 @@ function verificar() {
 adicionar.addEventListener("click", display_formulario)
 function display_formulario() {
     formulario.style.display = "flex"
+    label_classificacao.style.cssText = "display: none;"
+    input_classificacao.style.cssText = "display: none;"
+    span_valor.style.cssText = "display: none;"
 
 }
 documento.addEventListener("click", function(evento) {
     // Se o alvo do clique(evento.target) estiver fora do formulário e o alvo do clique for diferente do botão "adicionar", o formulário desaparece
     if (!formulario.contains(evento.target) && evento.target !== adicionar) {
         formulario.style.display = "none"
+        formulario.reset()
     }
 })
 
@@ -54,12 +58,24 @@ jaLido.addEventListener("click", () => {
 
 // Adiciona os valores do formulário à um cartão
 submit.addEventListener("click", salva_livro)
-function salva_livro() { // Salva info do formulário em um cartão
+function salva_livro(evento) { // Salva info do formulário em um cartão
+    evento.preventDefault() // Impede o reload da página e não envia o formulário para o servidor
     let input_titulo = document.querySelector("input#id_titulo") // Valor do input do título
     let input_autor = document.querySelector("input#id_autor") // Valor do input do autor
     let input_ano = document.querySelector("input#id_ano") // Valor do input do ano de lançamento
     let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
-} 
+    // Se algum campo estiver vazio
+    if (input_titulo.value === "" || input_autor.value === "" || input_ano.value ==="") {
+        alert("Por favor, preencha todos os campos")
+    } else {
+        formulario.style.display = "none"
+        formulario.reset() // Reseta os valores do formulário
+    }
+}
+
+function cria_cartao_livro() {
+    let container_cards = document.querySelector()
+}
 
 
 

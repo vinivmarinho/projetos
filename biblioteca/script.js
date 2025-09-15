@@ -103,6 +103,9 @@ function cria_cartao_livro(livro) {
     let botao2 = document.createElement("button")
     botao2.classList.add("remover")
     botao2.textContent = "Remover"
+    botao2.addEventListener("click", () =>{
+        container_cards.removeChild(cartao)
+    })
 
     // Cartão adiciona cada elemento
     cartao.appendChild(titulo)

@@ -50,6 +50,7 @@ jaLido.addEventListener("click", () => {
     if (jaLido.innerText === "Já lido") {
         jaLido.style.cssText = "background-color: #E58C8C;"
         jaLido.innerText = "Não lido"
+
     } else if (jaLido.innerText === "Não lido") {
         jaLido.style.cssText = "background-color: #74bb71"
         jaLido.innerText = "Já lido"
@@ -64,6 +65,7 @@ function salva_livro(evento) { // Salva info do formulário em um cartão
     let input_autor = document.querySelector("input#id_autor") // Valor do input do autor
     let input_ano = document.querySelector("input#id_ano") // Valor do input do ano de lançamento
     let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
+
     // Se algum campo estiver vazio
     if (input_titulo.value === "" || input_autor.value === "" || input_ano.value ==="") {
         alert("Por favor, preencha todos os campos")
@@ -71,10 +73,47 @@ function salva_livro(evento) { // Salva info do formulário em um cartão
         formulario.style.display = "none"
         formulario.reset() // Reseta os valores do formulário
     }
+
+    cria_cartao_livro(livro)
 }
 
-function cria_cartao_livro() {
-    let container_cards = document.querySelector()
+function cria_cartao_livro(livro) {
+    let container_cards = document.querySelector("div#cards")
+
+    let cartao = document.createElement("div")
+    cartao.classList.add("card")
+    cartao.dataset.id = livro.id
+
+    // Cria cada elemento individualmente
+    let titulo = document.createElement("p")
+    titulo.classList.add("titulo")
+    titulo.textContent = livro.titulo
+
+    let autor = document.createElement("p")
+    autor.classList.add("autor")
+    autor.textContent = livro.autor
+
+    let ano = document.createElement("p")
+    ano.classList.add("ano")
+    ano.textContent = livro.ano
+
+    let botao1 = document.createElement("button")
+    botao1.classList.add("jaLido")
+    botao1.textContent = "Já lido"
+
+    let botao2 = document.createElement("button")
+    botao2.classList.add("remover")
+    botao2.textContent = "Remover"
+
+    // Cartão adiciona cada elemento
+    cartao.appendChild(titulo)
+    cartao.appendChild(autor)
+    cartao.appendChild(ano)
+    cartao.appendChild(botao1)
+    cartao.appendChild(botao2)
+
+    // Container de cartões adiciona o cartão   
+    container_cards.appendChild(cartao)
 }
 
 

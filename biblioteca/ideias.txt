@@ -1,3 +1,4 @@
--- Próxima etapa: Adicionar validação ao formulário
+-- Botão do "já lido" e "não lido" corresponder ao formulário enviado pelo usuário
+-- Adicionar a nota do livro no cartão (se ele já foi lido)
 
 -- Próxima etapa: Buscar salvar o último estado da biblioteca (armazenar os livros em algum lugar, mesmo que a página seja fechada)

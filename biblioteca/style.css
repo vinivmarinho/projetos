@@ -60,14 +60,15 @@ div#cards{ /* Container que guarda os cartões com os livros */
 div.card{ /* Cada cartão individual que mostra as infos dos livros */
     background-color: #FAF3E0;
     width: 30%; /* Largura para caber 3 cartões em uma mesma linha */
+    padding: 10px;
     height: 250px;
     margin: 15px; 
     border-radius: 10px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: space-around;
     p, button{
-        margin-top: 15px;
         font-size: 1.5em;
     }
     button{

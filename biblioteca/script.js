@@ -60,9 +60,17 @@ function salva_livro(evento) { // Salva info do formulário em um cartão
     } else { // Se estiver preenchido
         let ano_atual = new Date().getFullYear()
         if (input_ano.value <= ano_atual) { // Se o ano for menor que 2025
-            let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
+            
+            if (checkbox.checked) { // Se o "já li esse livro" estiver marcado:
+                let input_nota = document.querySelector("input#id_classificacao")
+                let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value, input_nota.value) // Criando um livro com os inputs
+                cria_cartao_livro(livro) // Cria cartão com o Livro
+            } else {
+                let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
+                cria_cartao_livro(livro) // Cria cartão com o Livro
+            }
+           
             formulario.style.display = "none" // Formulário some
-            cria_cartao_livro(livro) // Cria cartão com o Livro
             formulario.reset() // Reseta os valores do formulário
         } else {
             alert("Ano de lançamento do livro inválido")
@@ -95,10 +103,25 @@ function cria_cartao_livro(livro) {
     let ano = document.createElement("p")
     ano.classList.add("ano")
     ano.textContent = livro.ano
+    
+    let nota = document.createElement("p")
+    if (livro.nota !== undefined && livro.nota !== "") { // Se "livro.nota" existir
+        nota.classList.add("nota")
+        nota.textContent = `Nota do livro: ${livro.nota}`
+    } else{
+        nota.textContent = ""
+    }
 
     let botao1 = document.createElement("button")
     botao1.classList.add("jaLido")
-    botao1.textContent = "Já lido"
+
+    if (checkbox.checked) { // Se o usuário já leu o livro: 
+        botao1.textContent = "Já lido"
+        botao1.style.cssText = "background-color: #74bb71"
+    } else {
+        botao1.textContent = "Não lido"
+        botao1.style.cssText = "background-color: #E58C8C;"
+    }
     botao1.addEventListener("click", () => { // Muda a cor do botão "Lido" ou "Não lido" pra cada cartão
         if (botao1.innerText === "Já lido") {
         botao1.style.cssText = "background-color: #E58C8C;"
@@ -121,6 +144,7 @@ function cria_cartao_livro(livro) {
     cartao.appendChild(titulo)
     cartao.appendChild(autor)
     cartao.appendChild(ano)
+    cartao.appendChild(nota)
     cartao.appendChild(botao1)
     cartao.appendChild(botao2)
 
@@ -134,11 +158,12 @@ function cria_cartao_livro(livro) {
 // Array de livros
 const livraria = []
 
-function cria_livro(titulo, autor, ano) {
+function cria_livro(titulo, autor, ano, nota = "") { // Nota é opcional
     // Construtor do livro
     this.titulo = titulo
     this.autor = autor
     this.ano = ano
+    this.nota = nota
     this.id = crypto.randomUUID() // Gera um id único
     livraria.push(this) // Array adiciona o objeto "livro"
 }

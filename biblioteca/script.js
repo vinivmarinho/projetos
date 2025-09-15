@@ -13,7 +13,7 @@ let formulario = document.querySelector("form#formulario")
 let documento = document.querySelector("html")
 let jaLido = document.querySelector("button.jaLido")
 
-// Verifica se o checkbox está marcado.
+// Verifica se o checkbox ("já li esse livro") está marcado.
 checkbox.addEventListener("change", verificar)
 function verificar() {
     if (checkbox.checked) { // Se estiver marcado: O input de classificação aparece para o usuário avaliar o livro
@@ -58,8 +58,7 @@ function salva_livro() { // Salva info do formulário em um cartão
     let input_titulo = document.querySelector("input#id_titulo") // Valor do input do título
     let input_autor = document.querySelector("input#id_autor") // Valor do input do autor
     let input_ano = document.querySelector("input#id_ano") // Valor do input do ano de lançamento
-    let harry_potter = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
-    armazena_livro(harry_potter)
+    let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
 } 
 
 
@@ -86,11 +85,7 @@ function cria_livro(titulo, autor, ano) {
     this.autor = autor
     this.ano = ano
     this.id = crypto.randomUUID() // Gera um id único
-}
-function armazena_livro(livro) {
-   // Adiciona o livro à "livraria"
-   livraria.push(livro) // Array adiciona o objeto "Livro"
-   alert(`${livro["titulo"]} adicionado com sucesso`)
+    livraria.push(this) // Array adiciona o objeto "livro"
 }
 
 

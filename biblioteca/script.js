@@ -44,18 +44,7 @@ documento.addEventListener("click", function(evento) {
     }
 })
 
-// Muda a cor do botão "Lido" ou "Não lido"
-// Problema: Só funciona com 1 cartão
-jaLido.addEventListener("click", () => {
-    if (jaLido.innerText === "Já lido") {
-        jaLido.style.cssText = "background-color: #E58C8C;"
-        jaLido.innerText = "Não lido"
 
-    } else if (jaLido.innerText === "Não lido") {
-        jaLido.style.cssText = "background-color: #74bb71"
-        jaLido.innerText = "Já lido"
-    }
-})
 
 // Adiciona os valores do formulário à um cartão
 submit.addEventListener("click", salva_livro)
@@ -100,6 +89,16 @@ function cria_cartao_livro(livro) {
     let botao1 = document.createElement("button")
     botao1.classList.add("jaLido")
     botao1.textContent = "Já lido"
+    botao1.addEventListener("click", () => { // Muda a cor do botão "Lido" ou "Não lido" pra cada cartão
+        if (botao1.innerText === "Já lido") {
+        botao1.style.cssText = "background-color: #E58C8C;"
+        botao1.innerText = "Não lido"
+
+    } else if (botao1.innerText === "Não lido") {
+        botao1.style.cssText = "background-color: #74bb71"
+        botao1.innerText = "Já lido"
+    }
+    })
 
     let botao2 = document.createElement("button")
     botao2.classList.add("remover")

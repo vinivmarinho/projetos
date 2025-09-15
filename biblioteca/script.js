@@ -13,6 +13,7 @@ let formulario = document.querySelector("form#formulario")
 let documento = document.querySelector("html")
 let jaLido = document.querySelector("button.jaLido")
 
+
 // Verifica se o checkbox ("já li esse livro") está marcado.
 checkbox.addEventListener("change", verificar)
 function verificar() {
@@ -53,17 +54,26 @@ function salva_livro(evento) { // Salva info do formulário em um cartão
     let input_titulo = document.querySelector("input#id_titulo") // Valor do input do título
     let input_autor = document.querySelector("input#id_autor") // Valor do input do autor
     let input_ano = document.querySelector("input#id_ano") // Valor do input do ano de lançamento
-    let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
-
-    // Se algum campo estiver vazio
+     // Se algum campo estiver vazio
     if (input_titulo.value === "" || input_autor.value === "" || input_ano.value ==="") {
         alert("Por favor, preencha todos os campos")
-    } else {
-        formulario.style.display = "none"
-        formulario.reset() // Reseta os valores do formulário
+    } else { // Se estiver preenchido
+        let ano_atual = new Date().getFullYear()
+        if (input_ano.value <= ano_atual) { // Se o ano for menor que 2025
+            let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
+            formulario.style.display = "none" // Formulário some
+            cria_cartao_livro(livro) // Cria cartão com o Livro
+            formulario.reset() // Reseta os valores do formulário
+        } else {
+            alert("Ano de lançamento do livro inválido")
+        }
     }
+    
 
-    cria_cartao_livro(livro)
+
+   
+
+    
 }
 
 function cria_cartao_livro(livro) {
@@ -121,18 +131,6 @@ function cria_cartao_livro(livro) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // Array de livros
 const livraria = []
 
@@ -146,14 +144,6 @@ function cria_livro(titulo, autor, ano) {
 }
 
 
-
-
-function display_livro(livraria) { // Futuramente posso usar essa função para ir criando divs para cada objeto no array de livraria
-    // Percorre o Array e mostra todos os livros
-    for (livro in livraria) {
-        // alert(livraria)
-    }
-}
 
 /* livro1 = new cria_livro("Harry Potter", "Fulano", 2025)
 livro2 = new cria_livro("Percy Jackson", "Ciclano", 2000)

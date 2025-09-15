@@ -1,0 +1,3 @@
+-- Próxima etapa: Adicionar validação ao formulário
+
+-- Próxima etapa: Buscar salvar o último estado da biblioteca (armazenar os livros em algum lugar, mesmo que a página seja fechada)

@@ -191,9 +191,3 @@ function cria_livro(titulo, autor, ano, nota = "") { // Nota é opcional
 
 
 
-/* livro1 = new cria_livro("Harry Potter", "Fulano", 2025)
-livro2 = new cria_livro("Percy Jackson", "Ciclano", 2000)
-
-armazena_livro(livro1)
-armazena_livro(livro2)
-display_livro(livraria) */

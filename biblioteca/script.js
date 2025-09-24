@@ -16,8 +16,7 @@ let jaLido = document.querySelector("button.jaLido")
 let links = document.querySelectorAll(".link")
 
 // Mostra minhas redes sociais
-redes_sociais.addEventListener("click", () => {
-    
+redes_sociais.addEventListener("click", function(evento) {
     links.forEach(link => {
         link.style.cssText = "display: block;"
     })
@@ -56,6 +55,14 @@ documento.addEventListener("click", function(evento) {
     if (!formulario.contains(evento.target) && evento.target !== adicionar) {
         formulario.style.display = "none"
         formulario.reset()
+    }
+    // Se o alvo do clique (evento.target) não for o botão "redes_sociais", os links e logos desaparecerão. A lista também perde a classe "clicado" 
+    if (!redes_sociais.contains(evento.target)) {
+        links.forEach(link => {
+            link.style.cssText = "display: none;"
+        })
+        lista.classList.remove("clicado")
+        
     }
 })
 

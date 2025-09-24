@@ -15,7 +15,8 @@ let documento = document.querySelector("html")
 let jaLido = document.querySelector("button.jaLido")
 let links = document.querySelectorAll(".link")
 
-// Mostra minhas redes sociais
+// Mostra minhas redes sociais 
+
 redes_sociais.addEventListener("click", function(evento) {
     links.forEach(link => {
         link.style.cssText = "display: block;"
@@ -70,6 +71,7 @@ documento.addEventListener("click", function(evento) {
 
 // Adiciona os valores do formulário à um cartão
 submit.addEventListener("click", salva_livro)
+
 function salva_livro(evento) { // Salva info do formulário em um cartão
     evento.preventDefault() // Impede o reload da página e não envia o formulário para o servidor
     let input_titulo = document.querySelector("input#id_titulo") // Valor do input do título
@@ -187,7 +189,23 @@ function cria_livro(titulo, autor, ano, nota = "") { // Nota é opcional
     this.nota = nota
     this.id = crypto.randomUUID() // Gera um id único
     livraria.push(this) // Array adiciona o objeto "livro"
+    salvaLocalStorage() // Chamando a função
 }
 
+
+// Função que salva o livro pelo LocalStorage
+function salvaLocalStorage() {
+    localStorage.setItem("livraria", JSON.stringify(livraria)) // "JSON.stringify" => Transforma o array em string (que é o que o localStorage aceita) e o salva
+}
+
+// Recuperando os livros quando a página carrega
+window.addEventListener("load", () => {
+    // JSON.parse => converte a string de volta para array/objeto
+    let livros_salvos = JSON.parse(localStorage.getItem("livraria") || []) // pega o valor salvo no LocalStorage (uma string ou null se não existir)
+    livros_salvos.forEach(livro => {
+        cria_cartao_livro(livro) // Cada livro é recriado
+        livraria.push(livro) // Adiciona o livro no array atual
+    })
+})
 
 

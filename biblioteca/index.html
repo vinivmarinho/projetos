@@ -10,8 +10,19 @@
     
     <header>
         <h1>Livraria</h1>
-        <button id="redes_sociais">Minhas redes sociais</button>
+        <ul>
+            <button id="redes_sociais">Minhas redes sociais</button>
+            <li class="link"><a href="https://github.com/vinivmarinho2" target="_blank"><img src="../calculadora/imagens/logo-github.jpg" alt="Logo github"></a></li>
+            <li class="link"><a href="https://www.instagram.com/vini.m__" target="_blank"><img src="../calculadora/imagens/logo-instagram.jpg" alt="LoInstagram"></a></li>
+            <li class="link"><a href="https://www.linkedin.com/in/vin%C3%ADcius-marinho-376a8a365/" target="_blank"><img src="../calculadora/imagens/logo_linkedin.png" alt="Logo linkedin"></a></li>
+
+
+
+
+        </ul>
+        
     </header>
+    
     <main>
         
         <button id="adicionar">+Add Livro</button>
@@ -37,6 +48,7 @@
         </label>
         
         <label for="id_classificacao" id="label_classificacao">De 1 a 10, avalie o livro</label>
+        
         <input type="range" name="classificacao" id="id_classificacao" min="1" max="10" value="5" oninput="valor.innerText=this.value"> <!-- Sempre que mudar o valor do range, o evento "oninput" atualiza o texto do elemento com id "valor" para mostrar o valor atual do input ("this.value")-->
         <span id="valor">5</span>
         <input type="submit" id="id_submit" value="Adicionar">

@@ -1,4 +1,5 @@
 let adicionar = document.querySelector("button#adicionar")
+let lista = document.querySelector("ul")
 let redes_sociais = document.querySelector("button#redes_sociais")
 let checkbox = document.querySelector("input#id_lido")
 let info_titulo = document.querySelector("p.titulo") // Título do livro (no cartão)
@@ -12,6 +13,19 @@ let formulario = document.querySelector("form#formulario")
 
 let documento = document.querySelector("html")
 let jaLido = document.querySelector("button.jaLido")
+let links = document.querySelectorAll(".link")
+
+// Mostra minhas redes sociais
+redes_sociais.addEventListener("click", () => {
+    
+    links.forEach(link => {
+        link.style.cssText = "display: block;"
+    })
+    lista.classList.add("clicado")
+})
+
+
+
 
 
 // Verifica se o checkbox ("já li esse livro") está marcado.

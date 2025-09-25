@@ -131,6 +131,7 @@ function cria_cartao_livro(livro) {
     if (livro.nota !== undefined && livro.nota !== "") { // Se "livro.nota" existir
         nota.classList.add("nota")
         nota.textContent = `Nota do livro: ${livro.nota}`
+        
     } else{
         nota.textContent = ""
     }
@@ -141,6 +142,7 @@ function cria_cartao_livro(livro) {
     if (checkbox.checked) { // Se o usuário já leu o livro: 
         botao1.textContent = "Já lido"
         botao1.style.cssText = "background-color: #74bb71"
+        
     } else {
         botao1.textContent = "Não lido"
         botao1.style.cssText = "background-color: #E58C8C;"
@@ -156,11 +158,15 @@ function cria_cartao_livro(livro) {
     }
     })
 
-    let botao2 = document.createElement("button")
-    botao2.classList.add("remover")
-    botao2.textContent = "Remover"
-    botao2.addEventListener("click", () =>{
-        container_cards.removeChild(cartao)
+    let botao_remover = document.createElement("button")
+    botao_remover.classList.add("remover")
+    botao_remover.textContent = "Remover"
+    botao_remover.addEventListener("click", () =>{
+        container_cards.removeChild(cartao) // Remove do HTML
+        alert(livraria)
+        livraria = livraria.filter(l => l.id !== livro.id) // Novo array que perde o livro que foi removido
+        alert(livraria)
+        localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
     })
 
     // Cartão adiciona cada elemento
@@ -169,7 +175,7 @@ function cria_cartao_livro(livro) {
     cartao.appendChild(ano)
     cartao.appendChild(nota)
     cartao.appendChild(botao1)
-    cartao.appendChild(botao2)
+    cartao.appendChild(botao_remover)
 
     // Container de cartões adiciona o cartão   
     container_cards.appendChild(cartao)
@@ -179,7 +185,7 @@ function cria_cartao_livro(livro) {
 
 
 // Array de livros
-const livraria = []
+let livraria = []
 
 function cria_livro(titulo, autor, ano, nota = "") { // Nota é opcional
     // Construtor do livro
@@ -188,8 +194,10 @@ function cria_livro(titulo, autor, ano, nota = "") { // Nota é opcional
     this.ano = ano
     this.nota = nota
     this.id = crypto.randomUUID() // Gera um id único
-    livraria.push(this) // Array adiciona o objeto "livro"
-    salvaLocalStorage() // Chamando a função
+    if (this.titulo !== "Título") { // Se não for o livro genérico
+        livraria.push(this) // Array adiciona o objeto "livro"
+        salvaLocalStorage() // Chamando a função
+    } 
 }
 
 
@@ -200,12 +208,15 @@ function salvaLocalStorage() {
 
 // Recuperando os livros quando a página carrega
 window.addEventListener("load", () => {
-    // JSON.parse => converte a string de volta para array/objeto
+     // JSON.parse => converte a string de volta para array/objeto
     let livros_salvos = JSON.parse(localStorage.getItem("livraria") || []) // pega o valor salvo no LocalStorage (uma string ou null se não existir)
     livros_salvos.forEach(livro => {
         cria_cartao_livro(livro) // Cada livro é recriado
         livraria.push(livro) // Adiciona o livro no array atual
     })
+    if (livraria.length === 0) { // Se a lista estiver vazia
+        let livro_aleatorio = new cria_livro("Título", "Autor(a)", "xxx", 10)
+        cria_cartao_livro(livro_aleatorio)
+    }
+   
 })
-
-

@@ -142,20 +142,26 @@ function cria_cartao_livro(livro) {
     if (checkbox.checked) { // Se o usuário já leu o livro: 
         botao1.textContent = "Já lido"
         botao1.style.cssText = "background-color: #74bb71"
+        livro.jaLido = true
         
     } else {
         botao1.textContent = "Não lido"
         botao1.style.cssText = "background-color: #E58C8C;"
+        livro.jaLido = false
     }
     botao1.addEventListener("click", () => { // Muda a cor do botão "Lido" ou "Não lido" pra cada cartão
         if (botao1.innerText === "Já lido") {
-        botao1.style.cssText = "background-color: #E58C8C;"
-        botao1.innerText = "Não lido"
+            botao1.style.cssText = "background-color: #E58C8C;"
+            botao1.innerText = "Não lido"
+            livro.jaLido = false
+            localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
 
-    } else if (botao1.innerText === "Não lido") {
-        botao1.style.cssText = "background-color: #74bb71"
-        botao1.innerText = "Já lido"
-    }
+    }   else if (botao1.innerText === "Não lido") {
+            botao1.style.cssText = "background-color: #74bb71"
+            botao1.innerText = "Já lido"
+            livro.jaLido = true
+            localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
+        }
     })
 
     let botao_remover = document.createElement("button")
@@ -185,12 +191,13 @@ function cria_cartao_livro(livro) {
 // Array de livros
 let livraria = []
 
-function cria_livro(titulo, autor, ano, nota = "") { // Nota é opcional
+function cria_livro(titulo, autor, ano, nota = "", jaLido = false) { // Nota é opcional
     // Construtor do livro
     this.titulo = titulo
     this.autor = autor
     this.ano = ano
     this.nota = nota
+    this.jaLido = jaLido
     this.id = crypto.randomUUID() // Gera um id único
     if (this.titulo !== "Título") { // Se não for o livro genérico
         livraria.push(this) // Array adiciona o objeto "livro"
@@ -216,5 +223,5 @@ window.addEventListener("load", () => {
         let livro_aleatorio = new cria_livro("Título", "Autor(a)", "xxx", 10)
         cria_cartao_livro(livro_aleatorio)
     }
-   
+
 })

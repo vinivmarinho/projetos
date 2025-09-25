@@ -20,4 +20,5 @@ link das imagens:
 
  
 Problema:
-- Cartão do começo não é excluído
+- Salvar info de "já lido" ou "não lido"
+- Quando eu recarrego a página, o jaLido se torna falso

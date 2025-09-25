@@ -22,3 +22,4 @@ link das imagens:
 Problema:
 - Salvar info de "já lido" ou "não lido"
 - Quando eu recarrego a página, o jaLido se torna falso
+- Deixar as logos na horizontal, motivo: A última logo fica atrás do terceiro cartão de livro

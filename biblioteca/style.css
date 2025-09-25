@@ -15,28 +15,28 @@ header{
     align-items: center;
     height: 100px;
     background-color: #e5e3e2;
-    button{ /* "Minhas redes sociais" */
-        margin-right: 70px;
-        padding: 10px;
-        background-color: #D2B48C;
-        border: none;
-        width: 145px;
-        height: 35px;
-    }
-    li{
-        list-style-type: none;
-    }
-    button:hover{
-        cursor: pointer;
-        width: 155px;
-        height: 45px;
-        border: 2px solid black;
-        
-    }
-    h1{
-        margin-left: 70px;
-        font-size: 3em;
-    }
+}
+header button{
+    /* "Minhas redes sociais" */
+    margin-right: 70px;
+    padding: 10px;
+    background-color: #D2B48C;
+    border: none;
+    width: 145px;
+    height: 35px;
+}
+header button:hover{
+    cursor: pointer;
+    width: 155px;
+    height: 45px;
+    border: 2px solid black;   
+}
+header li{
+    list-style-type: none;
+}
+header h1{
+    margin-left: 70px;
+    font-size: 3em;
 }
 ul{
     display: flex;
@@ -69,20 +69,21 @@ main {
     margin-top: 20px;
     display: flex;
     flex-flow: column nowrap;
-    button#adicionar{
-        background-color: gray;
-        font-size: 2em;
-        border: none;
-        padding: 10px;
-        margin: auto;
-    }
-    button#adicionar:hover{
-        background-color: #D8D8D8;
-    }
-    button{
-        cursor: pointer;
-    }
 }
+main button#adicionar{
+    background-color: gray;
+    font-size: 2em;
+    border: none;
+    padding: 10px;
+    margin: auto;
+}
+main button#adicionar:hover{
+    background-color: #D8D8D8;
+}
+main button{
+    cursor: pointer;
+}
+
 div#cards{ /* Container que guarda os cartões com os livros */
     width: 100%;
     display: flex;
@@ -103,29 +104,28 @@ div.card{ /* Cada cartão individual que mostra as infos dos livros */
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
-    
     transition: transform 0.3s, box-shadow 0.3s;
-    p, button{
-        font-size: 1.5em;
-    }
-    button{
-        width: 90%;
-        border-radius: 15px;
-        padding: 5px;
-        border: none;
-    }
-    button.remover{
-        background-color: #ff8c42;
-    }
-    button.jaLido{
-        background-color: #6abf69;
-        
-    }
-    button:hover{
-        font-size: 1.7em;
-        opacity: 0.9;
-    }
 }
+div.card p, button{
+    font-size: 1.5em;
+}
+div.card button{
+    width: 90%;
+    border-radius: 15px;
+    padding: 5px;
+    border: none;
+}
+div.card button.remover{
+    background-color: #ff8c42;
+}
+div.card button.jaLido{
+    background-color: #6abf69;  
+}
+div.card button:hover{
+    font-size: 1.7em;
+    opacity: 0.9;
+}
+
 div.card:hover{
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
@@ -152,10 +152,11 @@ form#formulario{
     flex-flow: column nowrap;
     align-items: center;
     display: none;
-    h1{
-        font-size: 1.7em;
-    }
 }
+form#formulario h1{
+    font-size: 1.7em;
+}
+
 form#formulario input[type="text"], input[type="number"]{ 
     padding: 10px;
     margin-top: 10px;

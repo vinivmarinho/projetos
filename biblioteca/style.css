@@ -16,28 +16,28 @@ header{
     height: 100px;
     background-color: #e5e3e2;
 }
-header button{
-    /* "Minhas redes sociais" */
+header button{ /* "Minhas redes sociais" */
     margin-right: 70px;
     padding: 10px;
     background-color: #D2B48C;
     border: none;
     width: 145px;
-    height: 35px;
+    height: 35px;   
+}
+header li{
+    list-style-type: none;
 }
 header button:hover{
     cursor: pointer;
     width: 155px;
     height: 45px;
-    border: 2px solid black;   
-}
-header li{
-    list-style-type: none;
+    border: 2px solid black;
 }
 header h1{
     margin-left: 70px;
     font-size: 3em;
 }
+
 ul{
     display: flex;
     flex-flow: column nowrap;
@@ -69,21 +69,20 @@ main {
     margin-top: 20px;
     display: flex;
     flex-flow: column nowrap;
-}
-main button#adicionar{
-    background-color: gray;
-    font-size: 2em;
-    border: none;
-    padding: 10px;
-    margin: auto;
-}
-main button#adicionar:hover{
+    button#adicionar{
+        background-color: gray;
+        font-size: 2em;
+        border: none;
+        padding: 10px;
+        margin: auto;
+    }
+button#adicionar:hover{
     background-color: #D8D8D8;
 }
-main button{
+button{
     cursor: pointer;
 }
-
+}
 div#cards{ /* Container que guarda os cartões com os livros */
     width: 100%;
     display: flex;
@@ -106,20 +105,22 @@ div.card{ /* Cada cartão individual que mostra as infos dos livros */
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-div.card p, button{
-    font-size: 1.5em;
+div.card p{
+font-size: 1.5em;
 }
 div.card button{
     width: 90%;
     border-radius: 15px;
     padding: 5px;
     border: none;
+    font-size: 1.5em;
 }
 div.card button.remover{
     background-color: #ff8c42;
 }
 div.card button.jaLido{
-    background-color: #6abf69;  
+    background-color: #6abf69;
+    
 }
 div.card button:hover{
     font-size: 1.7em;

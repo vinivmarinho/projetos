@@ -163,9 +163,7 @@ function cria_cartao_livro(livro) {
     botao_remover.textContent = "Remover"
     botao_remover.addEventListener("click", () =>{
         container_cards.removeChild(cartao) // Remove do HTML
-        alert(livraria)
         livraria = livraria.filter(l => l.id !== livro.id) // Novo array que perde o livro que foi removido
-        alert(livraria)
         localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
     })
 

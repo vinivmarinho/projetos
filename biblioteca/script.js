@@ -139,6 +139,7 @@ function cria_cartao_livro(livro) {
     let botao1 = document.createElement("button")
     botao1.classList.add("jaLido")
 
+    // Verifica se o usuário marcou o livro como "Já lido"
     if (checkbox.checked) { // Se o usuário já leu o livro: 
         botao1.textContent = "Já lido"
         botao1.style.cssText = "background-color: #74bb71"
@@ -148,20 +149,27 @@ function cria_cartao_livro(livro) {
         botao1.textContent = "Não lido"
         botao1.style.cssText = "background-color: #E58C8C;"
         livro.jaLido = false
+    } 
+    // Estado inicial quando a página carrega:  (TESTE)
+    if (livro.jaLido === true) {
+        botao1.textContent = "Já lido"
+        botao1.style.cssText = "background-color: #74bb71"
+    } else {
+        botao1.style.cssText = "background-color: #E58C8C;"
+        livro.jaLido = false
     }
-    botao1.addEventListener("click", () => { // Muda a cor do botão "Lido" ou "Não lido" pra cada cartão
-        if (botao1.innerText === "Já lido") {
-            botao1.style.cssText = "background-color: #E58C8C;"
-            botao1.innerText = "Não lido"
-            livro.jaLido = false
-            localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
 
-    }   else if (botao1.innerText === "Não lido") {
+
+    botao1.addEventListener("click", () => { // Muda a cor do botão "Lido" ou "Não lido" pra cada cartão
+        livro.jaLido = !livro.jaLido // Alterna o estado entre true e false quando o botão é clicado (TESTE OK)
+        if (livro.jaLido === false) {
+            botao1.style.cssText = "background-color: #E58C8C"
+            botao1.innerText = "Não lido"
+    }   else {
             botao1.style.cssText = "background-color: #74bb71"
             botao1.innerText = "Já lido"
-            livro.jaLido = true
-            localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
         }
+        localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
     })
 
     let botao_remover = document.createElement("button")
@@ -191,7 +199,7 @@ function cria_cartao_livro(livro) {
 // Array de livros
 let livraria = []
 
-function cria_livro(titulo, autor, ano, nota = "", jaLido = false) { // Nota é opcional
+function cria_livro(titulo, autor, ano, nota = "", jaLido = "") { // Nota é opcional
     // Construtor do livro
     this.titulo = titulo
     this.autor = autor
@@ -216,6 +224,7 @@ window.addEventListener("load", () => {
      // JSON.parse => converte a string de volta para array/objeto
     let livros_salvos = JSON.parse(localStorage.getItem("livraria") || []) // pega o valor salvo no LocalStorage (uma string ou null se não existir)
     livros_salvos.forEach(livro => {
+         // alert(livro.jaLido) // (TESTE)
         cria_cartao_livro(livro) // Cada livro é recriado
         livraria.push(livro) // Adiciona o livro no array atual
     })

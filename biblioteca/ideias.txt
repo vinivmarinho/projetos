@@ -4,19 +4,9 @@
 -- Próxima etapa: Buscar salvar o último estado da biblioteca (armazenar os livros em algum lugar, mesmo que a página seja fechada)
 -- Adicionar minhas redes sociais na página
 
--- Legenda linkedin:
-💻 + 📖 = ❤️
-Meu sistema de biblioteca está tomando forma! Ainda tem uns bugs, mas quem nunca? 😅
-#CodingLife #WebDev #ADS
-Construindo minha biblioteca digital, uma linha de código de cada vez! 🚀
-#DevLife #ProjetosPessoais #Programação
 
 
 
-link das imagens:
-<a href="https://github.com/vinivmarinho2" target="_blank"><img src="imagens/logo-github.jpg" alt="Logo github"></a>
-<a href="https://www.instagram.com/vini.m__" target="_blank"><img src="imagens/logo-instagram.jpg" alt="LoInstagram"></a>
-<a href="https://www.linkedin.com/in/vin%C3%ADcius-marinho-376a8a365/" target="_blank"><img src="imagelogo_linkedin.png" alt="Logo linkedin"></a>
 
  
 Problema:

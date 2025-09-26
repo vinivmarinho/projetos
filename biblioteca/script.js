@@ -83,14 +83,18 @@ function salva_livro(evento) { // Salva info do formulário em um cartão
     } else { // Se estiver preenchido
         let ano_atual = new Date().getFullYear()
         if (input_ano.value <= ano_atual) { // Se o ano for menor que 2025
-            
+            let input_nota = document.querySelector("input#id_classificacao")
             if (checkbox.checked) { // Se o "já li esse livro" estiver marcado:
-                let input_nota = document.querySelector("input#id_classificacao")
-                let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value, input_nota.value) // Criando um livro com os inputs
+                let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value, input_nota.value, true) // Criando um livro com os inputs
                 cria_cartao_livro(livro) // Cria cartão com o Livro
-            } else {
-                let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value) // Criando um livro com os inputs
+                alert(`Teste do salva livro: ${livro.jaLido}`)
+
+            } else if (!checkbox.checked) {
+                alert("Chegou falso")
+                alert(`Nota: ${input_nota.value}`)
+                let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value, input_nota.value, false) // Criando um livro com os inputs
                 cria_cartao_livro(livro) // Cria cartão com o Livro
+                // alert(`Teste do salva livro: ${livro.jaLido}`) 
             }
            
             formulario.style.display = "none" // Formulário some
@@ -138,25 +142,17 @@ function cria_cartao_livro(livro) {
 
     let botao1 = document.createElement("button")
     botao1.classList.add("jaLido")
+    
 
-    // Verifica se o usuário marcou o livro como "Já lido"
-    if (checkbox.checked) { // Se o usuário já leu o livro: 
-        botao1.textContent = "Já lido"
-        botao1.style.cssText = "background-color: #74bb71"
-        livro.jaLido = true
-        
-    } else {
-        botao1.textContent = "Não lido"
-        botao1.style.cssText = "background-color: #E58C8C;"
-        livro.jaLido = false
-    } 
-    // Estado inicial quando a página carrega:  (TESTE)
+    // Verifica se o livro.jaLido é true ou false, a partir daí cria o cartão
     if (livro.jaLido === true) {
         botao1.textContent = "Já lido"
         botao1.style.cssText = "background-color: #74bb71"
-    } else {
-        botao1.style.cssText = "background-color: #E58C8C;"
-        livro.jaLido = false
+        alert("teste de criação de cartão: Cartão verdadeiro criado")
+    } else if (livro.jaLido === false) {
+        botao1.textContent = "Não lido"
+        botao1.style.cssText = "background-color: #E58C8C"
+        alert(`teste de criação de cartão: Cartão falso criado`)
     }
 
 
@@ -164,10 +160,10 @@ function cria_cartao_livro(livro) {
         livro.jaLido = !livro.jaLido // Alterna o estado entre true e false quando o botão é clicado (TESTE OK)
         if (livro.jaLido === false) {
             botao1.style.cssText = "background-color: #E58C8C"
-            botao1.innerText = "Não lido"
-    }   else {
+            botao1.textContent = "Não lido"
+        }  else {
             botao1.style.cssText = "background-color: #74bb71"
-            botao1.innerText = "Já lido"
+            botao1.textContent = "Já lido"
         }
         localStorage.setItem("livraria", JSON.stringify(livraria)) // Atualiza o Local Storage
     })
@@ -199,18 +195,21 @@ function cria_cartao_livro(livro) {
 // Array de livros
 let livraria = []
 
-function cria_livro(titulo, autor, ano, nota = "", jaLido = "") { // Nota é opcional
+function cria_livro(titulo, autor, ano, nota = "", jaLido) { // Nota é opcional
     // Construtor do livro
     this.titulo = titulo
     this.autor = autor
     this.ano = ano
     this.nota = nota
     this.jaLido = jaLido
+    alert(`Teste do contrutor: ${jaLido}`)
     this.id = crypto.randomUUID() // Gera um id único
     if (this.titulo !== "Título") { // Se não for o livro genérico
         livraria.push(this) // Array adiciona o objeto "livro"
         salvaLocalStorage() // Chamando a função
-    } 
+    } else if (this.titulo === "Título" && this.autor === "Autor(a)" && this.nota === ""){
+        this.jaLido = false
+    }
 }
 
 
@@ -222,14 +221,14 @@ function salvaLocalStorage() {
 // Recuperando os livros quando a página carrega
 window.addEventListener("load", () => {
      // JSON.parse => converte a string de volta para array/objeto
-    let livros_salvos = JSON.parse(localStorage.getItem("livraria") || []) // pega o valor salvo no LocalStorage (uma string ou null se não existir)
+    let livros_salvos = JSON.parse(localStorage.getItem("livraria") || "[]") // pega o valor salvo no LocalStorage (uma string ou null se não existir)
     livros_salvos.forEach(livro => {
-         // alert(livro.jaLido) // (TESTE)
+        alert(` teste de load: ${livro.jaLido}`) // (TESTE)
         cria_cartao_livro(livro) // Cada livro é recriado
         livraria.push(livro) // Adiciona o livro no array atual
     })
     if (livraria.length === 0) { // Se a lista estiver vazia
-        let livro_aleatorio = new cria_livro("Título", "Autor(a)", "xxx", 10)
+        let livro_aleatorio = new cria_livro("Título", "Autor(a)", "xxx", "")
         cria_cartao_livro(livro_aleatorio)
     }
 

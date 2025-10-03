@@ -93,10 +93,8 @@ function salva_livro(evento) { // Salva info do formulário em um cartão
                 }
 
             } else if (!checkbox.checked) {
-                input_nota.value = ""
                 let livro = new cria_livro(input_titulo.value, input_autor.value, input_ano.value, input_nota.value, false) // Criando um livro com os inputs
                 cria_cartao_livro(livro) // Cria cartão com o Livro
-                // alert(`Teste do salva livro: ${livro.jaLido}`) 
                 let cartao_exemplo = document.querySelector("div.card p.titulo")
                 if (cartao_exemplo.textContent === "Título" && cartao_exemplo.parentElement.querySelector("p.autor").textContent === "Autor(a)") {
                     cartao_exemplo.parentElement.remove()
@@ -137,7 +135,9 @@ function cria_cartao_livro(livro) {
     if (livro.nota !== undefined && livro.nota !== "") { // Se "livro.nota" existir
         nota.classList.add("nota")
         nota.textContent = `Nota do livro: ${livro.nota}`
-        
+        if (!livro.jaLido) {
+            nota.textContent = ""
+        }
     } else{
         nota.textContent = ""
     }

@@ -1,24 +1,5 @@
--- Botão do "já lido" e "não lido" corresponder ao formulário enviado pelo usuário
--- Adicionar a nota do livro no cartão (se ele já foi lido)
-
--- Próxima etapa: Buscar salvar o último estado da biblioteca (armazenar os livros em algum lugar, mesmo que a página seja fechada)
--- Adicionar minhas redes sociais na página
+Problemas:
+- Quando o cartão é criado falso, remover a nota
 
 
-
-
-
- 
-Problema:
-- Salvar info de "já lido" ou "não lido"
-- Quando eu recarrego a página, o jaLido se torna falso
-- Deixar as logos na horizontal, motivo: A última logo fica atrás do terceiro cartão de livro
-
-
-
-cartão true
-
-
-
-
-cartão false
+    

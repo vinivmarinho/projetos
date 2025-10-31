@@ -17,19 +17,23 @@ verifica as combinações vencedoras (3 em linha) e empates */
 // estudar sobre objetos com listas dentro
 
 
+// Módulo autoexecutável (Module Pattern, IIFE)
+// Retorna apenas as funções e variáveis que devem ser acessíveis externamente
 moduloJogoDaVelha = (function() {
     // Tudo dentro do módulo está encapsulado e só pode ser acessado fora dele for retornado no final
     let tabuleiro = {
     posicoes:[0,1,2,3,4,5,6,7,8] // Lista com as posições do tabuleiro
     }
-    let jogador1 = {
-        nome: "Vinícius",
-        Simbolo: "O",
-        marcar(numeroPosicao) {
+
+    // Função de fábrica que cria objetos de jogadores
+    function criaJogador(nome, simbolo) {
+        // Função que marca o símbolo no tabuleiro
+        marcar = function(numeroPosicao) {
             return(tabuleiro.posicoes[numeroPosicao])
         }
+        return{nome, simbolo, marcar}
     }
-    return {jogador1}
-})()
 
-console.log(moduloJogoDaVelha.jogador1.marcar(8))
+    return {criaJogador}
+})()
+let jogador1 = moduloJogoDaVelha.criaJogador("Vinícius", "x")

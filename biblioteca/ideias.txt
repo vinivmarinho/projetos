@@ -1,5 +1,6 @@
-Problemas:
-- Quando o cartão é criado falso, remover a nota
+Próximos passos:
+- Responsividade do site
+- Quando muda de Lido pra não lido, deixar o user dar a nota
 
 
     

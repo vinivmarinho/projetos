@@ -1,23 +1,29 @@
-# Desafios Frontend Mentor 🧠💻
+# 🚀 Projetos de Estudo - HTML, CSS e JavaScript
 
-Este repositório contém a minha coleção de desafios do [Frontend Mentor](https://www.frontendmentor.io/), onde coloco em prática minhas habilidades em HTML, CSS e JavaScript. Cada projeto é uma oportunidade de aprender, melhorar e experimentar novas abordagens.
+Bem-vindo(a)! 👋  
+Este repositório reúne diversos projetos que estou desenvolvendo para praticar e aprimorar meus conhecimentos em **HTML**, **CSS** e **JavaScript**.  
+Cada pasta contém um projeto independente, com foco em diferentes conceitos do desenvolvimento web.
 
-## 📁 Estrutura do Repositório
+---
 
-```
-desafios/
-├── .git/
-├── README.md
-├── desafio_01/
-│   ├── index.html
-│   ├── estilos/
-│   ├── images/
-│   └── guide/
-├── desafio_02/
-    └── assets
-    └── estilos
-    └── index.html
+## 🧩 Tecnologias utilizadas
 
-```
+- **HTML5** → Estrutura e semântica das páginas  
+- **CSS3** → Estilização e layout responsivo  
+- **JavaScript** → Lógica e interatividade  
 
-Cada pasta dentro deste repositório representa um desafio específico. Dentro de cada pasta, você encontrará os arquivos necessários para rodar o projeto localmente.
+
+
+## 💡 Objetivo
+
+Este repositório serve como meu **laboratório de aprendizado**, onde exploro diferentes ideias e projetos enquanto estudo desenvolvimento web.
+
+---
+
+## 🧑‍💻 Autor
+
+**Vinícius Marinho**  
+📚 Estudante de Desenvolvimento Web  
+🔗 [GitHub](https://github.com/vinivmarinho) | [LinkedIn](https://www.linkedin.com/in/vin%C3%ADcius-marinho-376a8a365/)  
+
+---

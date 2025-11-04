@@ -21,7 +21,7 @@ verifica as combinações vencedoras (3 em linha) e empates */
 moduloJogoDaVelha = (function() {
     // Tudo dentro do módulo está encapsulado e só pode ser acessado fora dele for retornado no final
     let tabuleiro = {
-        posicoes:[0,1,2,3,4,5,6,7,8] // Lista com as posições do tabuleiro
+        posicoes: Array(9).fill(null)// Preenche todas as posições com null
     }
 
 
@@ -30,11 +30,11 @@ moduloJogoDaVelha = (function() {
         // Função que marca o símbolo no tabuleiro
         marcar = function(numeroPosicao) {
             if (numeroPosicao < tabuleiro.posicoes.length) { // Se a posição existir na lista
-                if (tabuleiro.posicoes[numeroPosicao] != "X" && tabuleiro.posicoes[numeroPosicao] != "O") { // Se a posição não foi marcada
-                    console.log(`O jogador ${nome} marcou a posição: ${tabuleiro.posicoes[numeroPosicao]}`)
+                if (tabuleiro.posicoes[numeroPosicao] === null) { // Se a posição for igual a "vazio"
+                    console.log(`O jogador ${nome} marcou a posição: ${numeroPosicao}`)
                     tabuleiro.posicoes[numeroPosicao] = this.simbolo
                 } else { // Se já foi marcada
-                    console.log("Posição já foi escolhida")
+                    console.log(`Posição ${numeroPosicao} já foi escolhida`)
                 }
             } else{ // Se a posição não existir na lista
                 return("Posição não existe")
@@ -42,11 +42,12 @@ moduloJogoDaVelha = (function() {
         }
         return{marcar, nome, simbolo}
     }
-    // Função que controla o fluxo do jogo
-    function fluxoJogo(jogador1, jogador2) {
-        for (let contador = 0; contador < tabuleiro.posicoes.length; contador++) {
-            jogador1.marcar()
-            jogador2.marcar()
+    let fluxoJogo = {
+        jogar(jogador1, jogador2) {
+            for (let contador = 0; contador < tabuleiro.posicoes.length; contador++) {
+                jogador1.marcar(Math.floor(Math.random() * 9) + 1)
+                jogador2.marcar(Math.floor(Math.random() * 9) + 1)
+            }
         }
     }
     
@@ -55,12 +56,8 @@ moduloJogoDaVelha = (function() {
 
 let jogador1 = moduloJogoDaVelha.criaJogador("Vinícius", "X")
 let jogador2 = moduloJogoDaVelha.criaJogador("Isa", "O")
-console.log(jogador1.marcar(8))
-console.log(jogador2.marcar(7))
-console.log(jogador1.marcar(6))
-console.log(jogador2.marcar(5))
-console.log(jogador1.marcar(4))
-console.log(jogador2.marcar(7))
+moduloJogoDaVelha.fluxoJogo.jogar(jogador1, jogador2)
+
 
 
 

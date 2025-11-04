@@ -6,34 +6,63 @@ verifica as combinações vencedoras (3 em linha) e empates */
 // Dentro do objeto tabuleiro, armazena uma lista com as linhas e colunas do jogo
 
 // Minhas idéias:
-// - cria uma lista dentro de um objeto "tabuleiro" com as posições(0, 1, 2, 3...) pra representar os espaços a serem preenchidos => OK
-// - Criar as opções pros jogadores escolherem (criar uma função no objeto "jogador" que permite escolher a posição a ser marcada)
+
+
+// Criar um objeto para controlar o fluxo do jogo. Ele vai usar a função "marcar" que está na função de fábrica "criarJogador"
 
 // - Se uma posição foi escolhida, não poderá ser escolhida de novo (criar algo para fazer esse verificação, talvez alterar o estado do elemento escolhido)
 
-// - Usar uma IFEE para controlar todo o jogo. (os objetos e funções estarão dentro da função IFEE)
-// - Posso usar módulos para só retornar o que eu precisar e deixar tudo dentro (acho que o módulo que é o objeto que vai controlar todo o fluxo do jogo, armazenar as funções e só mostrar oq for necessário)
 
-// estudar sobre objetos com listas dentro
+// O objeto de fluxo de jogo vai armazenar o 
 
 
-// Módulo autoexecutável (Module Pattern, IIFE)
+// Usando o module pattern para deixar variáveis e funções privadas, exceto as que forem retornadas
 // Retorna apenas as funções e variáveis que devem ser acessíveis externamente
 moduloJogoDaVelha = (function() {
     // Tudo dentro do módulo está encapsulado e só pode ser acessado fora dele for retornado no final
     let tabuleiro = {
-    posicoes:[0,1,2,3,4,5,6,7,8] // Lista com as posições do tabuleiro
+        posicoes:[0,1,2,3,4,5,6,7,8] // Lista com as posições do tabuleiro
     }
+
 
     // Função de fábrica que cria objetos de jogadores
     function criaJogador(nome, simbolo) {
         // Função que marca o símbolo no tabuleiro
         marcar = function(numeroPosicao) {
-            return(tabuleiro.posicoes[numeroPosicao])
+            if (numeroPosicao < tabuleiro.posicoes.length) { // Se a posição existir na lista
+                if (tabuleiro.posicoes[numeroPosicao] != "X" && tabuleiro.posicoes[numeroPosicao] != "O") { // Se a posição não foi marcada
+                    console.log(`O jogador ${nome} marcou a posição: ${tabuleiro.posicoes[numeroPosicao]}`)
+                    tabuleiro.posicoes[numeroPosicao] = this.simbolo
+                } else { // Se já foi marcada
+                    console.log("Posição já foi escolhida")
+                }
+            } else{ // Se a posição não existir na lista
+                return("Posição não existe")
+            }
         }
-        return{nome, simbolo, marcar}
+        return{marcar, nome, simbolo}
     }
-
-    return {criaJogador}
+    // Função que controla o fluxo do jogo
+    function fluxoJogo(jogador1, jogador2) {
+        for (let contador = 0; contador < tabuleiro.posicoes.length; contador++) {
+            jogador1.marcar()
+            jogador2.marcar()
+        }
+    }
+    
+    return {criaJogador, fluxoJogo}
 })()
-let jogador1 = moduloJogoDaVelha.criaJogador("Vinícius", "x")
+
+let jogador1 = moduloJogoDaVelha.criaJogador("Vinícius", "X")
+let jogador2 = moduloJogoDaVelha.criaJogador("Isa", "O")
+console.log(jogador1.marcar(8))
+console.log(jogador2.marcar(7))
+console.log(jogador1.marcar(6))
+console.log(jogador2.marcar(5))
+console.log(jogador1.marcar(4))
+console.log(jogador2.marcar(7))
+
+
+
+
+

@@ -47,6 +47,7 @@ moduloJogoDaVelha = (function() {
             for (let contador = 0; contador < tabuleiro.posicoes.length; contador++) {
                 jogador1.marcar(Math.floor(Math.random() * 9) + 1)
                 jogador2.marcar(Math.floor(Math.random() * 9) + 1)
+                console.log(tabuleiro.posicoes)
             }
         }
     }

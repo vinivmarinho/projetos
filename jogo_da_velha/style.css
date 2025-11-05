@@ -6,9 +6,25 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+body{ 
+    display: flex;
+    /* Centraliza o tabuleiro e o título na página */
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
 header {
     font-size: 2.5em;
     text-align: center;
     padding-top: 20px;
     font-weight: 900;
+}
+div#tabuleiro{
+    display: grid;
+    border: 3px solid black;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3,200px);
+}
+div#tabuleiro div{
+    border: 2px solid black;
 }

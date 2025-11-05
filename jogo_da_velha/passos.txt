@@ -1,0 +1,4 @@
+Começa o jogo quando os nomes forem preenchidos.
+Restarta o jogo se o botão de restart for pressionado.
+Quando o jogo iniciar, o formulário deve sumir e no lugar deve ficar: "Turno do ${nome do jogador}".
+Quando o jogo começar, eu preciso chamar a função "jogar" e ao invés de os jogadores marcarem números aleatórios, as divs de cada bloco irão receber "O" ou "X" 

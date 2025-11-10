@@ -13,13 +13,25 @@ moduloJogoDaVelha = (function() {
         }
         return {marcar, nome, simbolo}
     }
+    
+    function iniciarJogo(jogador1, jogador2) {
+        let jogadorDaVez = jogador1 // É executado uma única vez, apenas quando a função é chamada
 
-    posicoes.forEach(bloco => {
-        bloco.addEventListener("click", () => {
-            jogadorDaVez.marcar(bloco) // JogadorDaVez vai ficar sendo revezado entre o jogador 1 e 2
+        posicoes.forEach(bloco => { // Para cada "bloco" dentro de "posicoes"
+            bloco.addEventListener("click", () => { // Adiciona um evento em cada bloco
+                jogadorDaVez.marcar(bloco) // Marca o bloco
+
+                // Alternando entre os jogadores
+                if (jogadorDaVez === jogador1) {
+                    jogadorDaVez = jogador2
+                } else {
+                    jogadorDaVez = jogador1
+                }
+            })
         })
-    })
-    return {criaJogador, posicoes}
+    }
+
+    return {criaJogador, iniciarJogo}
 })()
 
 
@@ -31,18 +43,8 @@ let jogador1 = moduloJogoDaVelha.criaJogador(jogador1Input.value, "X") // ".valu
 let jogador2 = moduloJogoDaVelha.criaJogador(jogador2Input.value, "O")
 
 
-comecar.addEventListener("click", function() {
-    alert("olá")
-}) // Chama a função "jogar" quando o botão é clicado
+comecar.addEventListener("click", moduloJogoDaVelha.iniciarJogo(jogador1, jogador2)) // Chama a função "jogar" quando o botão é clicado
 
 
 
 
-// Teste para adicionar um evento pra cada bloco que for clicado
-moduloJogoDaVelha.posicoes.forEach(bloco => {
-    bloco.addEventListener("click", () => {
-        // Testando usar a função "marcar" que eu criei
-        jogador1.marcar(bloco)
-        // alert(`Você clicou na posição: ${bloco.innerHTML}`)
-    })
-}) 

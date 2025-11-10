@@ -19,7 +19,7 @@ verifica as combinações vencedoras (3 em linha) e empates */
 // Usando o module pattern para deixar variáveis e funções privadas, exceto as que forem retornadas
 // Retorna apenas as funções e variáveis que devem ser acessíveis externamente
 moduloJogoDaVelha = (function() {
-    // Tudo dentro do módulo está encapsulado e só pode ser acessado fora dele for retornado no final
+    // Tudo dentro do módulo está encapsulado e só pode ser acessado fora dele se for retornado no final
     let tabuleiro = {
         posicoes: Array(9).fill(null)// Preenche todas as posições com null
     }
@@ -42,6 +42,7 @@ moduloJogoDaVelha = (function() {
         }
         return{marcar, nome, simbolo}
     }
+    
     let fluxoJogo = {
         jogar(jogador1, jogador2) {
             for (let contador = 0; contador < tabuleiro.posicoes.length; contador++) {

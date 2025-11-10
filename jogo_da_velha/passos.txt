@@ -1,4 +1,12 @@
 Começa o jogo quando os nomes forem preenchidos.
+
 Restarta o jogo se o botão de restart for pressionado. (Adicionar isso no final)
+
 Quando o jogo iniciar, o formulário deve sumir e no lugar deve ficar: "Turno do ${nome do jogador}".
+
 Quando o jogo começar, eu preciso chamar a função "jogar" e ao invés de os jogadores marcarem números aleatórios, as divs de cada bloco irão receber "O" ou "X" 
+
+Alternar entre os turnos do jogadores, como fazer:
+- Quando for a vez do jogador1, o símbolo vai ser "x"
+- Quando for a vez do jogador2, o símbolo vai ser "O"
+- Criar uma função e depois no "bloco.addEventListener" eu vou chamar essa função que vai fazer essa troca entre o usuário1 e 2 (Função vai ser dentro do módulo)

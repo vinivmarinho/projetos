@@ -8,7 +8,7 @@ moduloJogoDaVelha = (function() {
     // Função de fábrica que cria objetos de jogadores
     function criaJogador(nome, simbolo) {
         // Função que marca o símbolo no tabuleiro
-        marcar = function(bloco) { // Passa o bloco que foi clicado
+        const marcar = function(bloco) { // Passa o bloco que foi clicado
             bloco.innerHTML = simbolo // Adiciona o símbolo no bloco pressionado
         }
         return {marcar, nome, simbolo}

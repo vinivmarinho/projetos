@@ -6,9 +6,10 @@ moduloJogoDaVelha = (function() {
     let posicoes = document.querySelectorAll(".bloco") // Todos os blocos do tabuleiro. Obs: é uma node List (Uma lista de nós do DOM)
     // Lista que contém as sequências de vitória
     let listaGeral = [
-        [posicoes[0], posicoes[1], posicoes[2]],
-        [posicoes[3], posicoes[4], posicoes[5]],
-        [posicoes[6], posicoes[7], posicoes[8]],
+        // Elementos estão em formato string pra combinarem com o id dos elementos HTML
+        ["0" ,"1" ,"2"],
+        ["3" ,"4" ,"5"],
+        ["6" ,"7" ,"8"],
     ]
     // Função de fábrica que cria objetos de jogadores
     function criaJogador(nome, simbolo) {
@@ -25,9 +26,21 @@ moduloJogoDaVelha = (function() {
         posicoes.forEach(bloco => { // Para cada "bloco" dentro de "posicoes"
 
             bloco.addEventListener("click", () => { // Adiciona um evento em cada bloco
+              
                 // Verificar se o espaço estiver vazio 
                 if (bloco.innerText === "") {
                     jogadorDaVez.marcar(bloco) // Marca o bloco
+
+                    // Id do bloco que eu clicar
+                    let blocoClicado = bloco.id
+                    // Loop que percorre a listaGeral
+                    for (let linha = 0; linha < listaGeral.length; linha++) {
+                        for (let coluna = 0; coluna < listaGeral.length; coluna++) {
+                            if (listaGeral[linha][coluna] === blocoClicado) { // Se a posição for igual ao id do bloco clicado
+                                listaGeral[linha][coluna] = jogadorDaVez.simbolo // A posição marcada recebe o símbolo do jogador
+                            } 
+                        }
+                    } 
                     // Alternando entre os jogadores
                     if (jogadorDaVez === jogador1) {
                         jogadorDaVez = jogador2

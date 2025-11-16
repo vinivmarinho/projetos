@@ -8,4 +8,4 @@ Quando o jogo iniciar, o formulário deve sumir e no lugar deve ficar: "Turno do
 
 - Próximo passo: Verificar se alguém ganhou a rodada:
     Pra isso, eu preciso transformar o bloco clicado em um índice para que eu consiga manipulá-lo pela "listaGeral"
-- Criar uma lista que contém sublistas de sequências ganhadoras
+- Criar uma lista que contém sublistas de sequências ganhadoras e dar um jeito de verificar se aquelas listas estão todas preenchidas com símbolos

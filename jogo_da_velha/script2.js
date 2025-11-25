@@ -11,13 +11,11 @@ moduloJogoDaVelha = (function () {
     ["3", "4", "5"],
     ["6", "7", "8"],
   ];
-  // Lista que guarda as sequências vencedoras
-  let listaVencedoras = [];
   // Função de fábrica que cria objetos de jogadores
   function criaJogador(nome, simbolo) {
     // Função que marca o símbolo no tabuleiro
+    // Passa o bloco que foi clicado
     const marcar = function (bloco) {
-      // Passa o bloco que foi clicado
       bloco.innerHTML = simbolo; // Adiciona o símbolo no bloco pressionado
     };
     return { marcar, nome, simbolo };
@@ -25,13 +23,10 @@ moduloJogoDaVelha = (function () {
 
   function iniciarJogo(jogador1, jogador2) {
     let jogadorDaVez = jogador1; // É executado uma única vez, apenas quando a função é chamada
-
+    // Para cada "bloco" dentro de "posicoes"
     posicoes.forEach((bloco) => {
-      // Para cada "bloco" dentro de "posicoes"
-
+      // Adiciona um evento em cada bloco
       bloco.addEventListener("click", () => {
-        // Adiciona um evento em cada bloco
-
         // Verificar se o espaço estiver vazio
         if (bloco.innerText === "") {
           jogadorDaVez.marcar(bloco); // Marca o bloco
@@ -47,6 +42,7 @@ moduloJogoDaVelha = (function () {
               }
             }
           }
+          verificaVencedor();
           // Alternando entre os jogadores
           if (jogadorDaVez === jogador1) {
             jogadorDaVez = jogador2;
@@ -56,6 +52,46 @@ moduloJogoDaVelha = (function () {
         }
       });
     });
+  }
+
+  function verificaVencedor() {
+    // Verifica linhas
+    for (let linha = 0; linha < 3; linha++) {
+      if (
+        listaGeral[linha][0] !== "" &&
+        listaGeral[linha][0] === listaGeral[linha][1] &&
+        listaGeral[linha][1] === listaGeral[linha][2]
+      ) {
+        alert(listaGeral[linha][0]); // Retorna o símbolo
+      }
+    }
+    // Verifica colunas
+    for (let coluna = 0; coluna < 3; coluna++) {
+      if (
+        listaGeral[0][coluna] !== "" &&
+        listaGeral[0][coluna] === listaGeral[1][coluna] &&
+        listaGeral[1][coluna] === listaGeral[2][coluna]
+      ) {
+        return listaGeral[0][coluna];
+      }
+    }
+    // Verifica diagonal principal
+    if (
+      listaGeral[0][0] !== "" &&
+      listaGeral[0][0] === listaGeral[1][1] &&
+      listaGeral[1][1] === listaGeral[2][2]
+    ) {
+      return listaGeral[0][0];
+    }
+    // Verifica a diagonal secundária
+    if (
+      listaGeral[0][2] !== "" &&
+      listaGeral[0][2] === listaGeral[1][1] &&
+      listaGeral[1][1] === listaGeral[2][0]
+    ) {
+      return listaGeral[0][2];
+    }
+    return null; // Caso não tenha vencedor
   }
 
   return { criaJogador, iniciarJogo, posicoes };

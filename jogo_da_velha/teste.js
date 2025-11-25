@@ -21,18 +21,12 @@ let sequenciasVencedoras = [
   [0, 4, 8], // Diagonal principal
   [2, 4, 6], // Diagonal secundária
 ];
-/* for (let lista = 0; lista < sequenciasVencedoras.length; lista++) {
-  let a = sequenciasVencedoras[lista][0];
-  let b = sequenciasVencedoras[lista][1];
-  let c = sequenciasVencedoras[lista][2];
-  let sequencia = [a,b,c]
-  console.log(sequencia) 
-} */
+
 let simbolo = "x"
 // Para cada lista em "sequenciasVencedoras"
 for (let sequencia of sequenciasVencedoras) {
   let [a, b, c] = sequencia;
-  console.log(listaGeral[b])
+  console.log(listaGeral[a])
 }
 /* No console:
 3,4,5

@@ -6,6 +6,4 @@ Quando o jogo iniciar, o formulário deve sumir e no lugar deve ficar: "Turno do
 
 
 
-- Próximo passo: Verificar se alguém ganhou a rodada:
-    Pra isso, eu preciso transformar o bloco clicado em um índice para que eu consiga manipulá-lo pela "listaGeral"
-- Criar uma lista que contém sublistas de sequências ganhadoras e dar um jeito de verificar se aquelas listas estão todas preenchidas com símbolos
+- Próximo passo: Verifica se os nomes dos jogadores foram preenchidos e aí sim começar a partida. Quando um jogador vencer, dará um alerta com uma mensagem: "Jogador (nome) venceu a partida"

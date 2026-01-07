@@ -1,1 +1,6 @@
 /* Arquivo de estilo para o arquivo "header.jsx" */
+.cabecalho{
+    padding-top: 30px;
+    display: flex;
+    gap: 200px;
+}

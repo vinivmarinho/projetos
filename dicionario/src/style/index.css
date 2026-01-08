@@ -16,3 +16,9 @@ body {
   max-width: 500px; /* Limita a largura */
   padding: 16px;
 }
+.Arial {
+  color: red;
+}
+.azul {
+  color: blue;
+}

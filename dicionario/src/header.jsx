@@ -1,12 +1,12 @@
-// Criar componente para o cabeçalho e a barra de pesquisa
-import { useState } from "react";
+// Arquivo cria componente para o cabeçalho e a barra de pesquisa
 import logo from "./assets/logo.svg"; // Importa a logo
 import "./style/header.css"; // Importa o arquivo de estilo
-export default function Cabecalho() {
+export default function Cabecalho({ fonte, setFonte }) {
   return (
     <header className="cabecalho">
       <Logo />
-      <SelecionaFonte />
+      <SelecionaFonte fonte={fonte} setFonte={setFonte}/>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cupiditate atque, a possimus hic quisquam ipsum voluptatum at expedita praesentium, nam quas nulla? Quae laborum molestiae possimus nihil accusantium vitae.</p>
     </header>
   );
 }
@@ -16,13 +16,14 @@ function Logo() {
 }
 
 // Controla a escolha da fonte
-function SelecionaFonte({ fonte, setFonte}) {
-  const fontes = ["Arial", "Sans-serif", "Serif", "Times New Roman"]; // Lista de fontes
+function SelecionaFonte({ fonte, setFonte }) {
+  const fontes = ["Arial", "azul", "Fonte_Serif", "Fonte_Times-New-Roman"]; // Lista de fontes
   return (
-    // "select" cria o menu. O "value" é a opção que está selecionado do estado "fonte"
-    // O "onChange" faz com que quando o usuário escolha outra fonte, ela muda e o react renderiza novamente com a fonte selecionada
+    // "select" cria o menu. O "value" é a opção que está selecionada do estado "fonte"
+    // O "onChange" dispara quando o usuário escolhe outra opção e atualiza o estado
     // Uso o método "map" para criar as opções do menu percorrendo a lista de fontes
-    <select value={fonte} onChange={(e) => setFonte(e.target.value)}>
+    // Obs: o "evento.target" é o elemento HTML que disparou o evento. (<select>, <input> ou <textarea> )
+    <select value={fonte} onChange={(evento) => setFonte(evento.target.value)}>
       {fontes.map((f) => (
         <option key={f} value={f}>
           {f}
@@ -31,3 +32,6 @@ function SelecionaFonte({ fonte, setFonte}) {
     </select>
   );
 }
+
+// Próximo passo => Adicionar a funcionalidade que mude a fonte da página de acordo com a escolha do usuário de fato
+

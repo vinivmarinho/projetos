@@ -17,7 +17,7 @@ function Logo() {
 
 // Controla a escolha da fonte
 function SelecionaFonte({ fonte, setFonte }) {
-  const fontes = ["Arial", "azul", "Fonte_Serif", "Fonte_Times-New-Roman"]; // Lista de fontes
+  const fontes = ["Inter", "Poppins", "Roboto", "Merriweather"]; // Lista de fontes
   return (
     // "select" cria o menu. O "value" é a opção que está selecionada do estado "fonte"
     // O "onChange" dispara quando o usuário escolhe outra opção e atualiza o estado

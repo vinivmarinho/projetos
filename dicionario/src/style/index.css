@@ -16,9 +16,15 @@ body {
   max-width: 500px; /* Limita a largura */
   padding: 16px;
 }
-.Arial {
-  color: red;
+.Inter {
+  font-family: 'Inter';
 }
-.azul {
-  color: blue;
+.Poppins {
+  font-family: 'Poppins';
+}
+.Roboto {
+  font-family: "Roboto";
+}
+.Merriweather{
+  font-family: 'Merriweather';
 }

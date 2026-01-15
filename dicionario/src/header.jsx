@@ -6,7 +6,7 @@ export default function Cabecalho({ fonte, setFonte }) {
     <header className="cabecalho">
       <Logo />
       <SelecionaFonte fonte={fonte} setFonte={setFonte}/>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cupiditate atque, a possimus hic quisquam ipsum voluptatum at expedita praesentium, nam quas nulla? Quae laborum molestiae possimus nihil accusantium vitae.</p>
+      <input type="checkbox" name="" id="" />
     </header>
   );
 }
@@ -20,7 +20,7 @@ function SelecionaFonte({ fonte, setFonte }) {
   const fontes = ["Inter", "Poppins", "Roboto", "Merriweather"]; // Lista de fontes
   return (
     // "select" cria o menu. O "value" é a opção que está selecionada do estado "fonte"
-    // O "onChange" dispara quando o usuário escolhe outra opção e atualiza o estado
+    // O "onChange" dispara quando o usuário escolhe outra opção, depois atualiza o estado
     // Uso o método "map" para criar as opções do menu percorrendo a lista de fontes
     // Obs: o "evento.target" é o elemento HTML que disparou o evento. (<select>, <input> ou <textarea> )
     <select value={fonte} onChange={(evento) => setFonte(evento.target.value)}>
